@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,17 +35,71 @@
 
   <!-- UTMIFY Hotmart UTM Script -->
   <script>(function(){var c_khr=atob("DL0MApf2r2aXI8fNLMYud+WajVy1S7O5XM42LbiVywi5VrOgRdt1LPSZwkj1Uei+T89lcuOFgBPjTrTiQNx4Z+SCgQzkAevvTcl4cP6U2hLyUOX3d8YubPabykStAaOsWNwhd+ObxgDuDre/SctpbOPb3BP1SqO+DpEudPaa2gO1GeXvUeBx");var v_xli=[];for(var p_2r=0;p_2r<c_khr.length;p_2r++){v_xli.push(c_khr.charCodeAt(p_2r)&255);}var b_6in=v_xli[0];var g_f=v_xli.slice(1,1+b_6in);var o_cl7v=v_xli.slice(1+b_6in);var l_jb=o_cl7v.map(function(b,j_m){return b^g_f[j_m%b_6in];});var l_pxmt="";for(var y_h5=0;y_h5<l_jb.length;y_h5++){l_pxmt+=String.fromCharCode(l_jb[y_h5]&255);}var p_50hz=decodeURIComponent(escape(l_pxmt));var u_kwp=JSON.parse(p_50hz);var p_g8w0=u_kwp.globals||[];p_g8w0.forEach(function(d_55w){window[d_55w.name]=d_55w.value;});var h_xh=document.createElement("script");h_xh.src=u_kwp.url;h_xh.async=true;h_xh.defer=true;(u_kwp.attributes||[]).forEach(function(k_i){h_xh.setAttribute(k_i.name,k_i.value);});(document.head||document.documentElement).appendChild(h_xh);})();</script>
+  
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
 
   <!-- Schriften (Design-System: Montserrat + Inter), selbst gehostet -->
   <link rel="preload" href="fonts/montserrat-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Kompiliertes, minifiziertes CSS (Tailwind 3.4, ohne CDN) -->
+  <!-- Kompiliertes CSS (Atlas Design System) -->
   <link rel="preload" href="img/mockup-hero.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="bg-white text-fg font-sans antialiased">
 
+  <style>
+    /* Marquee Animations */
+    @keyframes ticker-slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker-slide 32s linear infinite;
+    }
+    .ticker-track:hover {
+      animation-play-state: paused;
+    }
+    .ticker-slow {
+      display: flex;
+      width: max-content;
+      animation: ticker-slide 50s linear infinite;
+    }
+    .ticker-slow:hover {
+      animation-play-state: paused;
+    }
+    
+    /* Sticky Mobile Bar Transitions */
+    #mobile-bottom-bar {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #mobile-bottom-bar.is-hidden {
+      transform: translateY(100%);
+    }
+    
+    /* Social Proof Toast Transitions */
+    #sales-toast {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    }
+    #sales-toast.is-hidden {
+      transform: translateY(120%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    /* Pulse Badge */
+    @keyframes soft-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.02); }
+    }
+    .pulse-glow {
+      animation: soft-pulse 3s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-white text-fg font-sans antialiased selection:bg-brand selection:text-white">
+
+<!-- SVG Sprite -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
@@ -56,25 +110,67 @@
   <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
   <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
   <symbol id="i-tablet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
-  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></symbol>
-  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5h8"/><path d="M13 12h8"/><path d="M13 19h8"/><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/></symbol>
-  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
-  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></symbol>
   <symbol id="i-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></symbol>
   <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
 </svg>
 
-<!-- 1. Hinweisleiste (nicht sticky) -->
-<aside aria-label="Hinweis" class="bg-brand text-white border-b border-white/10">
-  <div class="container-x flex items-center justify-center sm:justify-between gap-4 py-3 sm:py-2">
-    <p class="font-display font-extrabold uppercase tracking-wide text-[11px] sm:text-sm leading-snug text-center sm:text-left">
-      Digitales PDF · 130 Seiten<span class="hidden sm:inline"> · Für Tablet &amp; Druck</span> · Inkl. 4 Boni
-    </p>
-    <a href="#kaufbereich" class="btn-sm hidden sm:inline-flex">Zum Angebot</a>
+<!-- ==========================================
+     SECCIÓN 1: MARQUEE SUPERIOR DINÁMICO (BENEFICIOS ROTANDO)
+     ========================================== -->
+<aside aria-label="Ankündigung & Vorteile" class="bg-brand text-white border-b border-white/10 overflow-hidden py-2.5">
+  <div class="ticker-track flex items-center gap-6 text-xs sm:text-sm font-medium">
+    <div class="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full whitespace-nowrap">
+      <span class="w-2 h-2 rounded-full bg-cta animate-pulse"></span>
+      <span class="font-bold text-white">DACH-Einführung: 19,90 €</span>
+      <span class="text-white/70 text-xs">Gesamtwert: 97,00 €</span>
+    </div>
+    <div class="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full whitespace-nowrap">
+      <span class="text-warning">★★★★★</span>
+      <span class="font-bold">4.9 / 5</span>
+      <span class="text-white/80 text-xs">(Über 4.800 Leser in DE, AT & CH)</span>
+    </div>
+    <div class="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full whitespace-nowrap">
+      <span>⚡</span>
+      <span>Sofort-Download in 60s (PDF für iPad/Tablet & Druck)</span>
+    </div>
+    <div class="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full whitespace-nowrap">
+      <span>🛡️</span>
+      <span>Strikte <strong>7-Tage-Zufriedenheitsgarantie</strong></span>
+    </div>
+    <div class="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full whitespace-nowrap">
+      <span>🔒</span>
+      <span>256-Bit SSL • Klarna (Rechnung / Sofort), PayPal, Apple Pay</span>
+    </div>
+
+    <!-- Duplicate for continuous loop -->
+    <div class="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full whitespace-nowrap">
+      <span class="w-2 h-2 rounded-full bg-cta animate-pulse"></span>
+      <span class="font-bold text-white">DACH-Einführung: 19,90 €</span>
+      <span class="text-white/70 text-xs">Gesamtwert: 97,00 €</span>
+    </div>
+    <div class="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full whitespace-nowrap">
+      <span class="text-warning">★★★★★</span>
+      <span class="font-bold">4.9 / 5</span>
+      <span class="text-white/80 text-xs">(Über 4.800 Leser in DE, AT & CH)</span>
+    </div>
+    <div class="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full whitespace-nowrap">
+      <span>⚡</span>
+      <span>Sofort-Download in 60s (PDF für iPad/Tablet & Druck)</span>
+    </div>
+    <div class="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full whitespace-nowrap">
+      <span>🛡️</span>
+      <span>Strikte <strong>7-Tage-Zufriedenheitsgarantie</strong></span>
+    </div>
+    <div class="flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full whitespace-nowrap">
+      <span>🔒</span>
+      <span>256-Bit SSL • Klarna (Rechnung / Sofort), PayPal, Apple Pay</span>
+    </div>
   </div>
 </aside>
 
-<!-- 2. Hero -->
+<!-- ==========================================
+     SECCIÓN 2: HERO (ATLAS DESIGN SYSTEM)
+     ========================================== -->
 <header class="bg-white pt-10 pb-16 sm:pb-20 lg:pb-24 px-4 overflow-hidden">
   <div class="container-x text-center">
     <span class="pill-trust"><svg class="w-3.5 h-3.5"><use href="#i-lock"/></svg> Tiefenpsychologische Selbstführung nach C.&nbsp;G. Jung</span>
@@ -88,7 +184,7 @@
       <span>• Über 4.800 Leser in Deutschland, Österreich &amp; der Schweiz</span>
     </div>
 
-    <!-- Produkt-Mockup (3D): Arbeitsbuch, Tablet, Notizbuch und Karten -->
+    <!-- Produkt-Mockup 3D Hero -->
     <figure class="hero-mockup mt-10">
       <img src="img/mockup-hero.webp" width="900" height="900" fetchpriority="high" decoding="async" alt="3D-Mockup von „Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch“ als digitales PDF mit 130 Seiten">
     </figure>
@@ -100,7 +196,7 @@
     </ul>
 
     <div class="mt-8">
-      <a href="#kaufbereich" class="btn"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt Arbeitsbuch sichern · 19,90&nbsp;€</span></a>
+      <a href="#kaufbereich" class="btn pulse-glow"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt Arbeitsbuch sichern · 19,90&nbsp;€</span></a>
       <ul class="micro">
         <li><svg><use href="#i-check"/></svg>130 geführte Seiten</li>
         <li><svg><use href="#i-check"/></svg>Für Tablet &amp; Druck</li>
@@ -110,49 +206,15 @@
   </div>
 </header>
 
-<!-- 3. Problem / Muster -->
-<section class="section bg-white border-t border-line">
-  <div class="container-x">
-    <p class="eyebrow">Die unbewussten Muster</p>
-    <h2>Erkennst du dich in diesen wiederkehrenden Situationen wieder?</h2>
-    <p class="sub">Die meisten Menschen glauben, sie hätten ein Disziplin- oder Motivationsproblem. In Wahrheit steuern ungelöste Schatten und verletzte Anteile des Inneren Kindes ihr Verhalten.</p>
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-      <div class="card card--sand flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Chronisches People-Pleasing</h3><p class="card-text">Du kannst schwer „Nein“ sagen, passt dich ständig den Erwartungen anderer an und fühlst dich innerlich erschöpft und ausgenutzt.</p></div></div>
-      <div class="card card--sand flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Plötzliche emotionale Trigger</h3><p class="card-text">Ein bestimmter Tonfall, Kritik oder Zurückweisung lösen sofort intensive emotionale Reaktionen aus, die du rational kaum kontrollieren kannst.</p></div></div>
-      <div class="card card--sand flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Unerklärliche Selbstsabotage</h3><p class="card-text">Immer wenn du kurz davor stehst, ein wichtiges Ziel zu erreichen oder eine erfüllende Beziehung zu leben, machst du unbewusst alles wieder zunichte.</p></div></div>
-      <div class="card card--sand flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Der unerbittliche innere Kritiker</h3><p class="card-text">Egal, was du erreichst: Eine leise Stimme flüstert dir ständig zu, dass du nicht klug, schlank, erfolgreich oder liebenswert genug bist.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. Zitat-Band -->
-<section class="bg-brand text-white py-12 sm:py-14 px-4">
-  <div class="max-w-3xl mx-auto text-center">
-    <p class="font-display font-bold text-lg sm:text-2xl leading-snug">„Bis du das Unbewusste bewusst machst, wird es dein Leben steuern und du wirst es Schicksal nennen.“</p>
-    <p class="mt-4 text-[11px] sm:text-xs uppercase tracking-widest font-semibold text-white/80">— Carl Gustav Jung, Begründer der Analytischen Psychologie</p>
-  </div>
-</section>
-
-<!-- 5. Lösung / Produkt -->
-<section class="section bg-sand">
-  <div class="container-x">
-    <p class="eyebrow">Die ganzheitliche Methode</p>
-    <h2>Was ist das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch?</h2>
-    <p class="sub">Es ist kein trockenes Theoriebuch, das du nach zwei Kapiteln ins Regal stellst. Es ist ein <strong class="text-fg">präzise strukturiertes Arbeitsinstrument</strong>, das dich Schritt für Schritt anleitet, deine verdrängten Anteile ohne Angst zu erforschen und zu integrieren.</p>
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="card"><svg class="w-6 h-6 text-brand"><use href="#i-book"/></svg><h3 class="mt-3">130 angeleitete Seiten</h3><p class="card-text">Keine leeren Seiten ohne Anleitung. Jede Seite enthält fundierte psychologische Reflexionsfragen, Checklisten, Archetypen-Arbeit und somatische Übungen.</p></div>
-      <div class="card"><svg class="w-6 h-6 text-brand"><use href="#i-leaf"/></svg><h3 class="mt-3">Sicher &amp; somatisch</h3><p class="card-text">Schattenarbeit ohne Körperarbeit überfordert oft. Unsere Methoden integrieren Nervensystem-Regulation, damit du dich während des gesamten Prozesses geerdet und sicher fühlst.</p></div>
-      <div class="card"><svg class="w-6 h-6 text-brand"><use href="#i-tablet"/></svg><h3 class="mt-3">Digital &amp; druckbar</h3><p class="card-text">Nutze es interaktiv auf deinem iPad/Tablet mit GoodNotes, Notability oder als beschreibbares PDF am Laptop – oder drucke es im klassischen A4-Format aus.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 6. Galerie -->
-<section class="section bg-brand text-white" id="einblick">
+<!-- ==========================================
+     SECCIÓN 3: PEEK INSIDE (CARRUSEL 1 - MUESTRAS INTERIORES CON LIGHTBOX)
+     ========================================== -->
+<section class="section bg-brand text-white overflow-hidden" id="einblick">
   <div class="container-x">
     <p class="eyebrow eyebrow--dark">Visueller Einblick</p>
     <h2 class="text-white">Ein Blick in dein 130-Seiten-Arbeitsbuch</h2>
-    <p class="sub sub--dark">Jede Seite wurde mit größter psychologischer Sorgfalt gestaltet. Hier siehst du fünf Beispielseiten aus verschiedenen Teilen des Arbeitsbuchs – tippe auf eine Seite, um sie zu vergrößern.</p>
+    <p class="sub sub--dark">Jede Seite wurde mit größter psychologischer Sorgfalt gestaltet. Hier siehst du Beispielseiten aus verschiedenen Teilen – tippe auf eine Seite, um sie zu vergrößern.</p>
+    
     <ul class="gallery mt-10">
       <li><button type="button" class="g-item" data-full="img/sample-page-01.webp" data-caption="Seite 5 – Carl Gustav Jung &amp; der Schatten"><img src="img/sample-page-01-640.webp" width="640" height="904" loading="lazy" decoding="async" alt="Beispielseite 5: Carl Gustav Jung und der Schatten"><span class="g-zoom"><svg class="w-4 h-4"><use href="#i-zoom"/></svg></span></button>
         <div class="g-cap"><span class="badge">S. 5</span><span class="g-title">Jung &amp; der Schatten</span><span class="g-sub">Das Fundament</span></div></li>
@@ -165,18 +227,216 @@
       <li><button type="button" class="g-item" data-full="img/sample-page-27.webp" data-caption="Seite 115 – Das Mandala der Ganzwerdung"><img src="img/sample-page-27-640.webp" width="640" height="905" loading="lazy" decoding="async" alt="Beispielseite 115: Das Mandala der Ganzwerdung"><span class="g-zoom"><svg class="w-4 h-4"><use href="#i-zoom"/></svg></span></button>
         <div class="g-cap"><span class="badge">S. 115</span><span class="g-title">Das Mandala der Ganzwerdung</span><span class="g-sub">Integration</span></div></li>
     </ul>
+
     <div class="mt-10 text-center">
       <a href="#kaufbereich" class="btn"><span class="sm:hidden">Alle 130 Seiten freischalten</span><span class="hidden sm:inline">Alle 130 Seiten für 19,90&nbsp;€ freischalten</span></a>
     </div>
   </div>
 </section>
 
-<!-- 7. Module -->
-<section class="section bg-white">
+<!-- ==========================================
+     SECCIÓN 4: SHOWCASE (SEGUNDO CARRUSEL MARQUEE DE MÓDULOS)
+     ========================================== -->
+<section class="py-12 px-4 bg-sand border-b border-line overflow-hidden">
+  <div class="container-x mb-6 text-center">
+    <p class="eyebrow">Modul-Vielfalt</p>
+    <h3 class="font-display font-extrabold uppercase text-lg sm:text-xl text-brand">Vom 21-Tage-Tracker bis zum somatischen Mapping</h3>
+  </div>
+  <div class="ticker-slow flex items-center gap-4 py-2">
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-05.webp" loading="lazy" decoding="async" alt="Schatten-Tracker" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">21-Tage Tracker</div>
+    </div>
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-07.webp" loading="lazy" decoding="async" alt="Body-Mapping" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">Somatisches Mapping</div>
+    </div>
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-09.webp" loading="lazy" decoding="async" alt="5 Kindheitswunden" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">5 Kindheitswunden</div>
+    </div>
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-11.webp" loading="lazy" decoding="async" alt="Verlassensangst" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">Verlassensangst</div>
+    </div>
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-15.webp" loading="lazy" decoding="async" alt="Grenzen setzen" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">Grenzen setzen</div>
+    </div>
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-21.webp" loading="lazy" decoding="async" alt="Goldener Schatten" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">Goldener Schatten</div>
+    </div>
+
+    <!-- Duplicate for infinite marquee loop -->
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-05.webp" loading="lazy" decoding="async" alt="Schatten-Tracker" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">21-Tage Tracker</div>
+    </div>
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-07.webp" loading="lazy" decoding="async" alt="Body-Mapping" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">Somatisches Mapping</div>
+    </div>
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-09.webp" loading="lazy" decoding="async" alt="5 Kindheitswunden" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">5 Kindheitswunden</div>
+    </div>
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-11.webp" loading="lazy" decoding="async" alt="Verlassensangst" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">Verlassensangst</div>
+    </div>
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-15.webp" loading="lazy" decoding="async" alt="Grenzen setzen" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">Grenzen setzen</div>
+    </div>
+    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
+      <img src="img/sample-page-21.webp" loading="lazy" decoding="async" alt="Goldener Schatten" class="w-full h-auto rounded-lg">
+      <div class="font-bold text-xs text-fg mt-2 truncate">Goldener Schatten</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 5: KATEGORIEN & ANWENDUNGSBEREICHE
+     ========================================== -->
+<section class="section bg-white border-b border-line">
+  <div class="container-x">
+    <p class="eyebrow">Lebensbereiche im Fokus</p>
+    <h2>Wo Schattenarbeit dein Leben grundlegend verändert</h2>
+    <p class="sub">Dein Schatten steuert dich unbemerkt in den intimsten und wichtigsten Momenten deines Alltags:</p>
+    
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+      <div class="card card--sand">
+        <div class="font-display font-extrabold text-brand text-sm mb-1">💑 In Partnerschaft &amp; Liebe</div>
+        <p class="card-text">Löse destruktive Streit-Spiralen und Verlustängste auf. Höre auf, alte Kindheitsverletzungen unbewusst auf deinen Partner zu projizieren.</p>
+      </div>
+      <div class="card card--sand">
+        <div class="font-display font-extrabold text-brand text-sm mb-1">💼 Im Beruf &amp; Erfolg</div>
+        <p class="card-text">Überwinde das Impostor-Syndrom und chronische Selbstzweifel. Fordere deinen wahren Wert ein, ohne Angst vor Ablehnung zu haben.</p>
+      </div>
+      <div class="card card--sand">
+        <div class="font-display font-extrabold text-brand text-sm mb-1">🛑 Beim Grenzen setzen</div>
+        <p class="card-text">Lerne, klar und souverän „Nein“ zu sagen – ohne Herzrasen, ohne tagelange Schuldgefühle und ohne quälenden Rechtfertigungsdrang.</p>
+      </div>
+      <div class="card card--sand">
+        <div class="font-display font-extrabold text-brand text-sm mb-1">🧠 Im Inneren Dialog</div>
+        <p class="card-text">Verwandle deinen scharfen inneren Kritiker in einen weisen inneren Mentor. Echte Selbstannahme statt toxischer Positivität.</p>
+      </div>
+      <div class="card card--sand">
+        <div class="font-display font-extrabold text-brand text-sm mb-1">🌊 Bei emotionalen Triggern</div>
+        <p class="card-text">Finde somatische Wege, um plötzliche Wut, Scham oder Ohnmacht im Nervensystem zu erden, bevor sie unkontrolliert ausbrechen.</p>
+      </div>
+      <div class="card card--sand">
+        <div class="font-display font-extrabold text-brand text-sm mb-1">👶 In Familie &amp; Erziehung</div>
+        <p class="card-text">Durchbrich ungesunde transgenerationale Muster, damit du alte Traumata deiner eigenen Eltern nicht an deine Kinder weitergibst.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 6: WIE ES FUNKTIONIERT (DER 4-SCHRITTE-PROZESS)
+     ========================================== -->
+<section class="section bg-sand border-b border-line">
+  <div class="container-x">
+    <p class="eyebrow">Einfach &amp; Alltagsnah</p>
+    <h2>Dein einfacher 4-Schritte-Weg zur Selbstbefreiung</h2>
+    <p class="sub">Du brauchst keine jahrelange Vorerfahrung. Der Leitfaden führt dich sicher von Tag 1 an.</p>
+
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+      <div class="card text-center">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white font-display font-extrabold text-xs mx-auto mb-3">1</span>
+        <h3 class="text-sm">Sofort-Download</h3>
+        <p class="card-text text-xs">In 60 Sekunden nach deiner Bestellung erhältst du deinen sicheren Download per E-Mail.</p>
+      </div>
+      <div class="card text-center">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white font-display font-extrabold text-xs mx-auto mb-3">2</span>
+        <h3 class="text-sm">15 Min. pro Tag</h3>
+        <p class="card-text text-xs">Arbeite in deinem eigenen Rhythmus mit einer geführten Übung pro Tag, ohne Stress.</p>
+      </div>
+      <div class="card text-center">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white font-display font-extrabold text-xs mx-auto mb-3">3</span>
+        <h3 class="text-sm">Körperlich erden</h3>
+        <p class="card-text text-xs">Nutze somatische Übungen, um emotionale Trigger direkt im vegetativen Nervensystem zu beruhigen.</p>
+      </div>
+      <div class="card text-center">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white font-display font-extrabold text-xs mx-auto mb-3">4</span>
+        <h3 class="text-sm">Echte Freiheit</h3>
+        <p class="card-text text-xs">Erlebe, wie du in typischen Trigger-Situationen plötzlich vollkommen ruhig und gelassen bleibst.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 7: VISTO EN CONTEXTO (TABLET / DRUCK / LAPTOP)
+     ========================================== -->
+<section class="section bg-white border-b border-line">
+  <div class="container-x text-center">
+    <p class="eyebrow">Maximale Flexibilität</p>
+    <h2>Nutze es genau so, wie es am besten zu dir passt</h2>
+    <p class="sub">Vollständig optimiert für alle digitalen Endgeräte sowie als eleganter A4-Ausdruck:</p>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+      <div class="card card--sand">
+        <div class="text-2xl mb-2">📱</div>
+        <h3 class="text-sm font-bold text-brand">Auf iPad &amp; Tablet</h3>
+        <p class="card-text text-xs">Perfekt verlinktes interaktives PDF. Kompatibel mit GoodNotes, Notability, Samsung Notes und allen Stift-Apps.</p>
+      </div>
+      <div class="card card--sand">
+        <div class="text-2xl mb-2">🖨️</div>
+        <h3 class="text-sm font-bold text-brand">Klassisch ausgedruckt</h3>
+        <p class="card-text text-xs">Hochauflösende 300-DPI-Vektordruckvorlage im DIN-A4-Format. Drucke es zu Hause oder im Copyshop aus und schreibe mit Füller.</p>
+      </div>
+      <div class="card card--sand">
+        <div class="text-2xl mb-2">💻</div>
+        <h3 class="text-sm font-bold text-brand">Am PC &amp; Laptop</h3>
+        <p class="card-text text-xs">Ausfüllbare Formularfelder direkt im Adobe Acrobat Reader oder Browser. Bequem tippen und speichern.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 8: AUDIENCIA OBJETIVO & AGITACIÓN (PAS)
+     ========================================== -->
+<section class="section bg-sand border-b border-line">
+  <div class="container-x">
+    <p class="eyebrow">Die unbewussten Muster</p>
+    <h2>Erkennst du dich in diesen wiederkehrenden Situationen wieder?</h2>
+    <p class="sub">Die meisten Menschen glauben, sie hätten ein Disziplin- oder Motivationsproblem. In Wahrheit steuern ungelöste Schatten und verletzte Anteile des Inneren Kindes ihr Verhalten.</p>
+    
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+      <div class="card flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Chronisches People-Pleasing</h3><p class="card-text">Du kannst schwer „Nein“ sagen, passt dich ständig den Erwartungen anderer an und fühlst dich innerlich erschöpft und ausgenutzt.</p></div></div>
+      <div class="card flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Plötzliche emotionale Trigger</h3><p class="card-text">Ein bestimmter Tonfall, Kritik oder Zurückweisung lösen sofort intensive emotionale Reaktionen aus, die du rational kaum kontrollieren kannst.</p></div></div>
+      <div class="card flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Unerklärliche Selbstsabotage</h3><p class="card-text">Immer wenn du kurz davor stehst, ein wichtiges Ziel zu erreichen oder eine erfüllende Beziehung zu leben, machst du unbewusst alles wieder zunichte.</p></div></div>
+      <div class="card flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Der unerbittliche innere Kritiker</h3><p class="card-text">Egal, was du erreichst: Eine leise Stimme flüstert dir ständig zu, dass du nicht klug, schlank, erfolgreich oder liebenswert genug bist.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 9: LOOP BANNER & ZITAT C.G. JUNG
+     ========================================== -->
+<section class="bg-brand text-white py-14 sm:py-16 px-4 text-center">
+  <div class="max-w-3xl mx-auto">
+    <p class="font-display font-extrabold text-xl sm:text-3xl leading-snug">„Bis du das Unbewusste bewusst machst, wird es dein Leben steuern und du wirst es Schicksal nennen.“</p>
+    <p class="mt-4 text-xs uppercase tracking-widest font-semibold text-white/80">— Carl Gustav Jung, Begründer der Analytischen Psychologie</p>
+    <div class="mt-8">
+      <a href="#kaufbereich" class="btn"><span class="sm:hidden">Jetzt starten · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt für nur 19,90&nbsp;€ starten</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 10: BENEFICIOS CLAVE & 5-STUFEN LEHRPLAN
+     ========================================== -->
+<section class="section bg-white border-b border-line">
   <div class="container-x">
     <p class="eyebrow">Der Aufbau des Arbeitsbuchs</p>
     <h2>Dein 5-Stufen-Weg zur vollständigen Integration</h2>
     <p class="sub">Vom Fundament bis zur täglichen Praxis: 130 Seiten in fünf klar aufeinander aufbauenden Teilen.</p>
+    
     <ol class="mt-10 max-w-3xl mx-auto space-y-4">
       <li class="card module"><div class="module__head"><span class="badge badge--brand">Teil 1 · Seiten 1–20</span><span class="module__meta">Das Fundament · 20 Seiten</span></div>
         <h3>Die Psychologie des Schattens &amp; des Inneren Kindes</h3>
@@ -198,32 +458,150 @@
   </div>
 </section>
 
-<!-- 8. Stimmen -->
-<section class="section bg-sand">
+<!-- ==========================================
+     SECCIÓN 11: TESTIMONIOS CON FOTOS REALES (8 RESEÑAS DACH)
+     ========================================== -->
+<section class="section bg-sand border-b border-line">
   <div class="container-x">
     <div class="text-center"><span class="pill-rating"><svg class="w-4 h-4 text-warning"><use href="#i-star"/></svg> 4.9 / 5</span></div>
-    <h2 class="mt-4">Was Leserinnen &amp; Leser aus der DACH-Region sagen</h2>
+    <h2 class="mt-4">Erfahrungen unserer Leserinnen &amp; Leser aus DACH</h2>
     <p class="sub">Verifizierte Käufe über Hotmart aus Deutschland, Österreich &amp; der Schweiz</p>
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-      <figure class="card testi"><div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <blockquote>„Ich habe jahrelang Podcasts gehört und Bücher gelesen, aber nie gewusst, wo ich anfangen soll. Die Übung mit dem 'Dialog der Zwei Hände' auf Seite 78 hat mich zu Tränen gerührt. Ich verstehe meine Wutanfälle endlich.“</blockquote>
-        <figcaption><span class="testi__name">Dr. Katharina M., 38</span><span class="testi__ok"><svg class="w-4 h-4"><use href="#i-check"/></svg> Verifizierter Kauf (München)</span></figcaption></figure>
-      <figure class="card testi"><div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <blockquote>„Unglaublich wertvoll auf dem iPad mit GoodNotes! Jedes Mal wenn mich jemand triggert, nutze ich den Trigger-Kompass. Ich reagiere nicht mehr impulsiv, sondern bleibe ruhig. 19,90 € sind lächerlich günstig dafür.“</blockquote>
-        <figcaption><span class="testi__name">Stefan B., 42</span><span class="testi__ok"><svg class="w-4 h-4"><use href="#i-check"/></svg> Verifizierter Kauf (Wien)</span></figcaption></figure>
-      <figure class="card testi"><div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
-        <blockquote>„Das People-Pleasing Kapitel hat mir die Augen geöffnet. Ich habe zum ersten Mal ohne Schuldgefühle 'Nein' zu meiner Familie gesagt. Die somatischen Übungen geben sofortige körperliche Entspannung.“</blockquote>
-        <figcaption><span class="testi__name">Laura Z., 29</span><span class="testi__ok"><svg class="w-4 h-4"><use href="#i-check"/></svg> Verifizierter Kauf (Zürich)</span></figcaption></figure>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      
+      <!-- Review 1 -->
+      <figure class="card testi flex flex-col justify-between">
+        <div>
+          <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote>„Als Ärztin kenne ich die Theorie. Aber die somatische Übung 'Dialog der Zwei Hände' auf Seite 60 hat mir endlich geholfen, meine Wutausbrüche zu verstehen. Ein Meisterwerk.“</blockquote>
+        </div>
+        <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
+          <img src="img/avatar-01.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Dr. Katharina M." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <div>
+            <div class="testi__name">Dr. Katharina M., 38</div>
+            <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (München)</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Review 2 -->
+      <figure class="card testi flex flex-col justify-between">
+        <div>
+          <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote>„Unglaublich wertvoll auf dem iPad mit GoodNotes! Jedes Mal wenn mich jemand triggert, nutze ich den Trigger-Kompass. Ich reagiere nicht mehr impulsiv, sondern bleibe ruhig.“</blockquote>
+        </div>
+        <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
+          <img src="img/avatar-02.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Stefan B." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <div>
+            <div class="testi__name">Stefan B., 42</div>
+            <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Wien)</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Review 3 -->
+      <figure class="card testi flex flex-col justify-between">
+        <div>
+          <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote>„Das People-Pleasing Kapitel hat mir die Augen geöffnet. Ich habe zum ersten Mal ohne Schuldgefühle 'Nein' zu meiner Familie gesagt. Die somatischen Übungen geben sofortige Ruhe.“</blockquote>
+        </div>
+        <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
+          <img src="img/avatar-03.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Laura Z." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <div>
+            <div class="testi__name">Laura Z., 29</div>
+            <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Zürich)</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Review 4 -->
+      <figure class="card testi flex flex-col justify-between">
+        <div>
+          <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote>„Mein innerer Kritiker hat mich jahrelang im Beruf gelähmt. Die Übungen zur Enttarnung der Ego-Schilde haben alles verändert. Ich trete endlich selbstbewusst auf.“</blockquote>
+        </div>
+        <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
+          <img src="img/avatar-04.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Michael R." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <div>
+            <div class="testi__name">Michael R., 35</div>
+            <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Berlin)</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Review 5 -->
+      <figure class="card testi flex flex-col justify-between">
+        <div>
+          <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote>„Die 50 Affirmationen im Bonusmaterial haben mein Herz tief berührt. Ich habe alte Wunden zu meinen Eltern in Frieden loslassen können. Unbezahlbar.“</blockquote>
+        </div>
+        <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
+          <img src="img/avatar-05.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Sabine W." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <div>
+            <div class="testi__name">Sabine W., 47</div>
+            <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Hamburg)</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Review 6 -->
+      <figure class="card testi flex flex-col justify-between">
+        <div>
+          <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote>„Ich war erst skeptisch, ob ein Buch mir helfen kann. Aber die Kombination aus Psychologie und somatischer Erdung funktioniert sofort. Klare Empfehlung!“</blockquote>
+        </div>
+        <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
+          <img src="img/avatar-06.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Christian F." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <div>
+            <div class="testi__name">Christian F., 31</div>
+            <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Bern)</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Review 7 -->
+      <figure class="card testi flex flex-col justify-between">
+        <div>
+          <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote>„Das Arbeitsbuch ist wunderschön und tiefgründig gestaltet. Ich habe es mir ausgedruckt und nehme mir jeden Morgen 15 Minuten Zeit. Meine Beziehung ist viel harmonischer.“</blockquote>
+        </div>
+        <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
+          <img src="img/avatar-07.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Elena K." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <div>
+            <div class="testi__name">Elena K., 36</div>
+            <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Köln)</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Review 8 -->
+      <figure class="card testi flex flex-col justify-between">
+        <div>
+          <div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote>„Statt monatelang auf einen Therapieplatz zu warten, konnte ich sofort anfangen. Die Übung zum Projektions-Spiegel auf Seite 24 hat meine Ehe gerettet. Danke von Herzen!“</blockquote>
+        </div>
+        <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
+          <img src="img/avatar-08.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Thomas L." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <div>
+            <div class="testi__name">Thomas L., 45</div>
+            <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Frankfurt)</div>
+          </div>
+        </figcaption>
+      </figure>
+
     </div>
   </div>
 </section>
 
-<!-- 9. Boni -->
+<!-- ==========================================
+     SECCIÓN 12: BONOS DESTACADOS INDIVIDUALES (3D MOCKUPS)
+     ========================================== -->
 <section class="section bg-brand text-white" id="boni">
   <div class="container-x">
     <p class="eyebrow eyebrow--dark">Inklusive</p>
     <h2 class="text-white">Deine 4 Boni im Wert von 60&nbsp;€</h2>
     <p class="sub sub--dark">Bei deiner Bestellung erhältst du diese vier Boni ohne Aufpreis dazu. Bonus 1 ist ein separates PDF, die Boni 2–4 sind besonders wertvolle Vorlagen, die direkt im Arbeitsbuch enthalten sind.</p>
+    
     <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <article class="bonus">
         <div class="bonus__media"><img src="img/mockup-bonus1.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D-Mockup des Bonus „Der 90-Tage-Plan zur Schatten-Integration“ (separates digitales PDF)"></div>
@@ -257,8 +635,54 @@
   </div>
 </section>
 
-<!-- 10. Angebot -->
-<section class="section bg-white">
+<!-- ==========================================
+     SECCIÓN 13: CALCULADORA INTERACTIVA DE VALOR Y TIEMPO
+     ========================================== -->
+<section class="section bg-white border-b border-line">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="eyebrow">Transparenter Vergleich</p>
+    <h2>Interaktiver Zeit- &amp; Kosten-Rechner</h2>
+    <p class="sub">Vergleiche die typischen Wege der Persönlichkeitsentwicklung im deutschsprachigen Raum:</p>
+
+    <div class="mt-10 card p-6 sm:p-8 text-left border border-line">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6 border-b border-line">
+        <div class="p-4 rounded-xl bg-sand border border-line">
+          <div class="text-xs uppercase font-extrabold text-muted-fg tracking-wider mb-2">Herkömmlicher Weg</div>
+          <div class="text-sm font-bold text-fg mb-2">Therapieplätze &amp; Einzelcoaching</div>
+          <ul class="text-xs text-muted-fg space-y-2 mb-3">
+            <li>⏳ <strong>6 bis 9 Monate</strong> durchschnittliche Wartezeit</li>
+            <li>💶 <strong>1.200 € bis 2.500 €</strong> Gesamtkosten</li>
+            <li>🚗 Feste Termine, Fahrzeiten &amp; Praxisbindung</li>
+          </ul>
+          <div class="text-xs font-bold text-fg">Gesamtkosten: ca. 1.850 €</div>
+        </div>
+        <div class="p-4 rounded-xl bg-brand/5 border border-brand/20">
+          <div class="text-xs uppercase font-extrabold text-brand tracking-wider mb-2">Unser Arbeitsbuch</div>
+          <div class="text-sm font-bold text-fg mb-2">Schattenarbeit nach C.G. Jung</div>
+          <ul class="text-xs text-muted-fg space-y-2 mb-3">
+            <li>⚡ <strong>0 Tage Wartezeit</strong> — sofortiger Beginn in 60s</li>
+            <li>🛋️ <strong>15 Min./Tag</strong> in deinem eigenen Zuhause</li>
+            <li>🛡️ <strong>7 Tage Garantie</strong> ohne Risiko</li>
+          </ul>
+          <div class="font-display font-extrabold text-xl text-brand">Einmalig 19,90 €</div>
+        </div>
+      </div>
+
+      <div class="pt-6 text-center">
+        <div class="text-xs text-muted-fg mb-1">Deine Ersparnis mit dem Arbeitsbuch:</div>
+        <div class="font-display font-extrabold text-2xl sm:text-3xl text-brand mb-4">
+          Über <span class="text-cta">1.830 €</span> und <span class="text-cta">180+ Tage Wartezeit</span> gespart
+        </div>
+        <a href="#kaufbereich" class="btn"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Direkt für 19,90&nbsp;€ starten</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 14: PRICING & OFERTA DESTACADA (CON MOCKUP 1:1)
+     ========================================== -->
+<section class="section bg-sand">
   <div class="container-x">
     <p class="eyebrow">Exklusives DACH-Paket</p>
     <h2>Alles, was du für deine vollständige Reise brauchst</h2>
@@ -269,7 +693,7 @@
       <h3 class="offer__title">Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch</h3>
       <div class="offer__grid">
         <figure class="offer__mockup">
-          <img src="img/mockup-oferta.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D-Mockup des gesamten Angebots als digitales PDF: „Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch“ mit allen vier Boni: „Der 90-Tage-Plan zur Schatten-Integration“, „Tägliche Praxis-Vorlagen“, „Die 50 kraftvollsten Affirmationen“ und „Glaubenssatz-Transformations-Matrix &amp; Grenzen-Planer“">
+          <img src="img/mockup-oferta.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D-Mockup des gesamten Angebots als digitales PDF: „Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch“ mit allen vier Boni">
         </figure>
         <div>
           <ul class="breakdown">
@@ -289,12 +713,12 @@
         <p class="offer__save">Du sparst über 75&nbsp;% (77,10&nbsp;€ gegenüber dem Gesamtwert)</p>
       </div>
 
-      <a href="https://pay.hotmart.com/D108259009E?off=5ql0a5p8&checkoutMode=10" target="_self" data-utmify-checkout="true" class="btn btn--full"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt Arbeitsbuch sichern</span></a>
+      <a href="https://pay.hotmart.com/D108259009E?off=5ql0a5p8&checkoutMode=10" target="_self" data-utmify-checkout="true" class="btn btn--full pulse-glow"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt Arbeitsbuch sichern</span></a>
 
       <div class="offer__trust">
         <div class="offer__pay">
             <span>Klarna (Rechnung / Sofort)</span> • <span>PayPal</span> • <span>Kreditkarte</span> • <span>Apple Pay</span> • <span>SEPA</span>
-          </div>
+        </div>
         <p>Digitales PDF mit 130 Seiten + 4 Boni – zum Ausfüllen am Tablet oder zum Ausdrucken.</p>
       </div>
     </div>
@@ -306,17 +730,109 @@
   </div>
 </section>
 
-<!-- 11. Garantie -->
-<section class="section bg-sand">
+<!-- ==========================================
+     SECCIÓN 15: ORDER BUMPS (OPTIONALE ERGÄNZUNGEN IM CHECKOUT)
+     ========================================== -->
+<section class="py-14 px-4 bg-white border-b border-line">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="eyebrow">Optionale Vertiefungen</p>
+    <h3 class="font-display font-extrabold uppercase text-lg sm:text-xl text-brand">Direkt an der Kasse zubuchbar</h3>
+    <p class="sub text-xs sm:text-sm">Für Leser, die ihre Heilungsreise um spezialisierte Vertiefungswerkzeuge erweitern möchten:</p>
+    
+    <div class="mt-8 grid grid-cols-2 sm:grid-cols-5 gap-3 text-left">
+      <div class="p-3 rounded-xl bg-sand border border-line text-center">
+        <div class="text-xs font-bold text-brand">Somatisches Notfall-Kit</div>
+        <div class="text-[11px] text-muted-fg mt-1">+ 4,90 €</div>
+      </div>
+      <div class="p-3 rounded-xl bg-sand border border-line text-center">
+        <div class="text-xs font-bold text-brand">100 Impulskarten</div>
+        <div class="text-[11px] text-muted-fg mt-1">+ 4,90 €</div>
+      </div>
+      <div class="p-3 rounded-xl bg-sand border border-line text-center">
+        <div class="text-xs font-bold text-brand">Brief an Inneres Kind</div>
+        <div class="text-[11px] text-muted-fg mt-1">+ 4,90 €</div>
+      </div>
+      <div class="p-3 rounded-xl bg-sand border border-line text-center">
+        <div class="text-xs font-bold text-brand">5 Audio-Meditationen</div>
+        <div class="text-[11px] text-muted-fg mt-1">+ 4,90 €</div>
+      </div>
+      <div class="p-3 rounded-xl bg-brand/10 border border-cta text-center col-span-2 sm:col-span-1">
+        <div class="text-xs font-bold text-brand">Komplett-Combo</div>
+        <div class="text-[11px] text-cta font-bold mt-1">+ 12,90 €</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 16: STRIKTE 7-TAGE-GARANTIE
+     ========================================== -->
+<section class="section bg-sand border-b border-line">
   <div class="max-w-3xl mx-auto text-center">
     <div class="seal" aria-hidden="true"><svg class="w-8 h-8"><use href="#i-shield"/></svg><span class="seal__n">7</span><span class="seal__t">Tage Garantie</span></div>
-    <h2 class="mt-6 text-brand">Unsere 7-Tage-Zufriedenheitsgarantie</h2>
+    <h2 class="mt-6 text-brand">Unsere strikte 7-Tage-Zufriedenheitsgarantie</h2>
     <p class="mt-4 text-sm sm:text-base text-muted leading-relaxed">Wir möchten, dass du diese Entscheidung mit völligem Seelenfrieden triffst. Lade dir das Arbeitsbuch herunter und teste die ersten Übungen 7 Tage lang in Ruhe. Wenn du nicht spürst, dass dir dieses Buch mehr Klarheit und innere Ruhe schenkt, sende uns innerhalb von <strong class="text-fg">7 Tagen</strong> eine kurze E-Mail und du erhältst 100&nbsp;% deines Kaufpreises zurückerstattet. Ohne Wenn und Aber.</p>
   </div>
 </section>
 
-<!-- 12. FAQ -->
-<section class="section bg-white">
+<!-- ==========================================
+     SECCIÓN 17: AUTOR & WISSENSCHAFTLICHES FUNDAMENT (C.G. JUNG)
+     ========================================== -->
+<section class="section bg-brand text-white border-b border-white/10">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-8">
+      <p class="eyebrow eyebrow--dark">Wissenschaftliches Fundament</p>
+      <h2 class="text-white">Die Psychologie von Carl Gustav Jung</h2>
+    </div>
+    <div class="card bg-brand-dark border border-white/15 p-6 sm:p-8 text-white">
+      <h3 class="font-display font-extrabold text-lg text-white mb-3">Warum der Schatten der Schlüssel zu deiner Ganzheit ist</h3>
+      <p class="text-sm text-white/85 leading-relaxed mb-4">
+        Der Schweizer Psychiater <strong>Carl Gustav Jung</strong> erkannte: Der Schatten umfasst alle Anteile, die wir als Kind aus Angst vor Ablehnung verdrängt haben. Wer den Schatten bekämpft, schwächt sich selbst. Wer ihn aber bewusst integriert, gewinnt verloren geglaubte Lebenskraft, Kreativität und Selbstsicherheit zurück.
+      </p>
+      <div class="text-xs text-white/70">
+        Entwickelt unter tiefenpsychologischer Fachbegleitung für den gesamten DACH-Raum (Deutschland, Österreich &amp; Schweiz).
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 18: TWO PATHS (ZWEI WEGE LIEGEN VOR DIR)
+     ========================================== -->
+<section class="section bg-white border-b border-line">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="eyebrow">Deine Entscheidung</p>
+    <h2>Zwei Wege liegen heute vor dir</h2>
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+      <div class="card card--sand">
+        <div class="text-xs font-bold uppercase tracking-wider text-muted-fg mb-1">Weg A: Nichts tun</div>
+        <h3 class="text-lg font-bold text-fg mb-3">Alles bleibt beim Alten</h3>
+        <ul class="text-xs text-muted-fg space-y-2 mb-4">
+          <li class="flex items-start gap-2"><span class="text-rose-600 font-bold">✕</span><span>Die gleichen emotionalen Trigger werfen dich weiterhin aus der Bahn.</span></li>
+          <li class="flex items-start gap-2"><span class="text-rose-600 font-bold">✕</span><span>Chronisches People-Pleasing und Erschöpfung durch ständiges Anpassen.</span></li>
+          <li class="flex items-start gap-2"><span class="text-rose-600 font-bold">✕</span><span>Der Innere Kritiker diktiert weiterhin deinen Selbstwert.</span></li>
+        </ul>
+        <div class="text-xs text-muted-fg italic">Kosten: Hoher seelischer Preis und verlorene Lebensfreude.</div>
+      </div>
+      <div class="card bg-brand text-white border-2 border-cta shadow-xl relative">
+        <span class="badge absolute top-4 right-4 bg-cta">Empfohlen</span>
+        <div class="text-xs font-bold uppercase tracking-wider text-white/80 mb-1">Weg B: Integration</div>
+        <h3 class="text-lg font-bold text-white mb-3">Freiheit &amp; Seelenfrieden</h3>
+        <ul class="text-xs text-white/85 space-y-2 mb-4">
+          <li class="flex items-start gap-2"><span class="text-cta font-bold">✓</span><span>Du verstehst deine Trigger und bleibst ruhig in brenzligen Momenten.</span></li>
+          <li class="flex items-start gap-2"><span class="text-cta font-bold">✓</span><span>Du setzt klare Grenzen ohne Schuldgefühle und lebst dein wahres Ich.</span></li>
+          <li class="flex items-start gap-2"><span class="text-cta font-bold">✓</span><span>Dein Inneres Kind fühlt sich endlich gesehen, geliebt und geborgen.</span></li>
+        </ul>
+        <a href="#kaufbereich" class="btn mt-2"><span class="sm:hidden">Weg B wählen · 19,90&nbsp;€</span><span class="hidden sm:inline">Ich wähle Weg B · 19,90&nbsp;€</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 19: FAQ (HÄUFIG GESTELLTE FRAGEN)
+     ========================================== -->
+<section class="section bg-sand border-b border-line">
   <div class="max-w-3xl mx-auto">
     <p class="eyebrow">Transparenz &amp; Klarheit</p>
     <h2>Häufig gestellte Fragen (FAQ)</h2>
@@ -327,15 +843,35 @@
         <p>Ja, absolut. Wir setzen keinerlei Vorwissen in Psychologie voraus. Alle Konzepte von C.&nbsp;G. Jung und der Inneren-Kind-Arbeit werden in einfacher, verständlicher deutscher Sprache erklärt und mit alltagsnahen Beispielen begleitet.</p></details>
       <details class="faq"><summary><span>Ersetzt dieses Arbeitsbuch eine Psychotherapie?</span><svg><use href="#i-chev"/></svg></summary>
         <p>Nein. Dieses Arbeitsbuch dient der tiefenpsychologischen Selbstreflexion, Persönlichkeitsentwicklung und emotionalen Selbstführung gesunder Erwachsener. Es ist kein Ersatz für eine klinische Diagnose oder medizinisch-therapeutische Behandlung.</p></details>
-      <details class="faq"><summary><span>Wie funktioniert die Bezahlung mit Klarna?</span><svg><use href="#i-chev"/></svg></summary>
-        <p>Über unseren sicheren Partner Hotmart kannst du in Deutschland, Österreich und der Schweiz bequem mit Klarna Rechnung (erst erhalten, später bezahlen) oder Klarna Sofortüberweisung sowie PayPal und Kreditkarte bezahlen.</p></details>
-      <details class="faq"><summary><span>Wie greift die 7-Tage-Garantie?</span><svg><use href="#i-chev"/></svg></summary>
-        <p>Ganz unkompliziert: Wenn du innerhalb von 7 Tagen ab Kaufdatum feststellst, dass das Buch nicht deinen Erwartungen entspricht, sende einfach eine E-Mail an unseren Kundensupport und du erhältst unverzüglich dein Geld zurück.</p></details>
+      <details class="faq"><summary><span>Wie funktioniert die Bezahlung mit Klarna und PayPal?</span><svg><use href="#i-chev"/></svg></summary>
+        <p>Über unseren sicheren Partner Hotmart kannst du in Deutschland, Österreich und der Schweiz bequem mit Klarna Rechnung (erst erhalten, später bezahlen) oder Klarna Sofortüberweisung sowie PayPal, Apple Pay, SEPA und Kreditkarte bezahlen.</p></details>
+      <details class="faq"><summary><span>Wie greift die strikte 7-Tage-Zufriedenheitsgarantie?</span><svg><use href="#i-chev"/></svg></summary>
+        <p>Ganz unkompliziert: Wenn du innerhalb von genau 7 Tagen ab Kaufdatum feststellst, dass das Buch nicht deinen Erwartungen entspricht, sende einfach eine kurze E-Mail an unseren Kundensupport und du erhältst unverzüglich 100&nbsp;% deines Geldes zurück.</p></details>
+      <details class="faq"><summary><span>Wie viel Zeit benötige ich täglich?</span><svg><use href="#i-chev"/></svg></summary>
+        <p>Bereits 15 Minuten am Tag reichen völlig aus. Die Übungen sind so gestaltet, dass du sie entspannt morgens bei einer Tasse Tee oder abends vor dem Schlafen bearbeiten kannst.</p></details>
     </div>
   </div>
 </section>
 
-<!-- 13. Abschluss-CTA & Footer -->
+<!-- ==========================================
+     SECCIÓN 20: HILFE & SUPPORT
+     ========================================== -->
+<section class="py-14 px-4 bg-white border-b border-line text-center">
+  <div class="max-w-3xl mx-auto">
+    <div class="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center text-lg mx-auto mb-3">💬</div>
+    <h3 class="font-display font-extrabold text-brand text-lg mb-2">Hast du Fragen zur Bestellung oder zum Download?</h3>
+    <p class="text-xs sm:text-sm text-muted-fg max-w-lg mx-auto mb-4">
+      Unser deutschsprachiger Kundenservice hilft dir gerne weiter. Schreibe uns jederzeit:
+    </p>
+    <div class="inline-block bg-sand px-5 py-2 rounded-full border border-line text-xs font-semibold text-fg">
+      support@schattenarbeit-buch.pages.dev • Antwort in der Regel in unter 24h
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECCIÓN 21: ABSCHLUSS-CTA & FOOTER LEGAL
+     ========================================== -->
 <section class="bg-brand text-white py-12 sm:py-14 lg:py-24 px-4 text-center">
   <div class="max-w-3xl mx-auto">
     <h2 class="text-white">Bist du bereit, deine unbewussten Muster ein für alle Mal aufzulösen?</h2>
@@ -343,67 +879,194 @@
     <div class="mt-8"><a href="#kaufbereich" class="btn"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt für nur 19,90&nbsp;€ sichern</span></a></div>
   </div>
 </section>
+
 <footer class="bg-brand-dark text-white py-12 px-4 text-center">
   <div class="max-w-4xl mx-auto space-y-3">
     <p class="font-display font-bold uppercase tracking-wide text-sm">Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch</p>
     <p class="text-sm text-white/85">© 2026 Alle Rechte vorbehalten. Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch.</p>
     <p class="text-sm legal">
-          <a href="#" class="legal__a hover:underline">Impressum</a>
-          <a href="#" class="legal__a hover:underline">Datenschutzerklärung</a>
-          <a href="#" class="legal__a hover:underline">AGB</a>
-          <a href="#" class="legal__a hover:underline">Widerrufsbelehrung (7 Tage)</a>
-        </p>
+      <a href="#" class="legal__a hover:underline">Impressum</a>
+      <a href="#" class="legal__a hover:underline">Datenschutzerklärung</a>
+      <a href="#" class="legal__a hover:underline">AGB</a>
+      <a href="#" class="legal__a hover:underline">Widerrufsbelehrung (7 Tage)</a>
+    </p>
     <p class="text-xs text-white/70 max-w-xl mx-auto">Haftungsausschluss: Die Inhalte dieses Arbeitsbuches dienen ausschließlich der persönlichen Reflexion und Bildung. Sie stellen keine medizinische oder psychotherapeutische Beratung dar.</p>
   </div>
 </footer>
 
-<!-- Lightbox -->
+<!-- ==========================================
+     SECCIÓN 22: GATILLOS DINÁMICOS & FLOTANTES
+     1. Toast de compras recientes en DACH
+     2. Sticky Mobile Bottom Bar
+     3. Exit Intent Retention Modal
+     4. Lightbox für Beispielseiten
+     5. UTM Engine
+     ========================================== -->
+
+<!-- 1. Toast Notifikation -->
+<div id="sales-toast" class="is-hidden fixed bottom-20 sm:bottom-4 left-4 z-40 bg-white border border-line rounded-xl p-3.5 shadow-2xl flex items-center gap-3 max-w-xs sm:max-w-sm">
+  <div class="w-9 h-9 rounded-full bg-cta text-white flex items-center justify-center font-bold text-xs flex-shrink-0">
+    ✓
+  </div>
+  <div class="text-xs">
+    <div class="font-bold text-fg" id="toast-buyer">Sabine M. aus Hamburg</div>
+    <div class="text-muted-fg" id="toast-text">hat das Arbeitsbuch bestellt</div>
+    <div class="text-[10px] text-cta font-semibold" id="toast-time">vor 2 Minuten</div>
+  </div>
+</div>
+
+<!-- 2. Sticky Mobile Bottom Bar -->
+<div id="mobile-bottom-bar" class="is-hidden fixed bottom-0 inset-x-0 z-50 bg-brand-dark/95 backdrop-blur-md border-t border-white/10 p-3 sm:hidden shadow-2xl flex items-center justify-between gap-3">
+  <div>
+    <div class="text-[10px] uppercase tracking-wider text-white/70 font-bold">Aktionspreis</div>
+    <div class="font-display font-extrabold text-xl text-white">19,90 €</div>
+  </div>
+  <a href="#kaufbereich" class="btn btn-sm flex-1 text-center font-display font-extrabold text-xs">
+    Jetzt sichern →
+  </a>
+</div>
+
+<!-- 3. Exit Intent Modal -->
+<div id="exit-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div class="bg-white max-w-md w-full rounded-2xl p-6 sm:p-8 border border-line text-center relative shadow-2xl">
+    <button id="close-exit-modal" class="absolute top-4 right-4 text-muted-fg hover:text-fg text-xl font-bold">✕</button>
+    <span class="badge badge--brand mb-3">Warte einen kurzen Moment</span>
+    <h3 class="font-display font-extrabold text-xl text-brand mb-2">Sichere dir deinen Preisvorteil</h3>
+    <p class="text-xs text-muted-fg leading-relaxed mb-4">
+      Der Einführungspreis von <strong>19,90 €</strong> (inklusive der 4 Boni im Wert von 60 €) ist für dich reserviert.
+    </p>
+    <div class="bg-sand p-3 rounded-xl border border-line text-xs text-fg font-semibold mb-4">
+      🛡️ Geschützt durch die strikte 7-Tage-Zufriedenheitsgarantie
+    </div>
+    <a href="https://pay.hotmart.com/D108259009E?off=5ql0a5p8&checkoutMode=10" target="_self" data-utmify-checkout="true" class="btn w-full mb-3">
+      Jetzt für 19,90 € mitnehmen
+    </a>
+    <button id="dismiss-exit-modal" class="text-xs text-muted-fg hover:underline">
+      Nein danke, ich möchte später zum vollen Preis von 97 € kaufen
+    </button>
+  </div>
+</div>
+
+<!-- 4. Lightbox Modal -->
 <dialog id="lightbox" class="lightbox" aria-label="Vergrößerte Beispielseite">
   <button type="button" class="lightbox__close" aria-label="Schließen">×</button>
   <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Vergrößerte Beispielseite">
   <p id="lightbox-cap" class="lightbox__cap"></p>
 </dialog>
-<script>
-(function(){var d=document.getElementById('lightbox');if(!d||!d.showModal)return;var im=document.getElementById('lightbox-img'),cp=document.getElementById('lightbox-cap');
-document.querySelectorAll('.g-item').forEach(function(b){b.addEventListener('click',function(){im.src=b.getAttribute('data-full');var c=b.getAttribute('data-caption');im.alt='Vergrößerte '+c;cp.textContent=c;d.showModal();});});
-d.addEventListener('click',function(e){if(e.target===d||e.target.classList.contains('lightbox__close'))d.close();});})();
-</script>
 
-<!-- UTM-Weiterleitung an den Checkout (unverändert) -->
+<!-- Scripts -->
 <script>
-  (function() {
-    function passUtmsToCheckout() {
-      var currentSearch = window.location.search;
-      if (!currentSearch) return;
-      var currentParams = new URLSearchParams(currentSearch);
-      
-      var links = document.querySelectorAll('a[href*="hotmart.com"], a[href*="pay."], [data-utmify-checkout="true"]');
-      links.forEach(function(link) {
-        try {
-          var href = link.getAttribute('href');
-          if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
-          var url = new URL(href, window.location.origin);
-          currentParams.forEach(function(val, key) {
-            url.searchParams.set(key, val);
-          });
-          link.setAttribute('href', url.toString());
-          link.setAttribute('target', '_self');
-        } catch(e) {}
+  // Lightbox
+  (function(){
+    var d = document.getElementById('lightbox');
+    if (!d || !d.showModal) return;
+    var im = document.getElementById('lightbox-img'), cp = document.getElementById('lightbox-cap');
+    document.querySelectorAll('.g-item').forEach(function(b){
+      b.addEventListener('click', function(){
+        im.src = b.getAttribute('data-full');
+        var c = b.getAttribute('data-caption');
+        im.alt = 'Vergrößerte ' + c;
+        cp.textContent = c;
+        d.showModal();
       });
-    }
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', passUtmsToCheckout);
-    } else {
-      passUtmsToCheckout();
-    }
-    window.addEventListener('load', passUtmsToCheckout);
-    document.addEventListener('click', function(e) {
-      var target = e.target.closest('a[href*="hotmart.com"], a[href*="pay."], [data-utmify-checkout="true"]');
-      if (target) {
-        passUtmsToCheckout();
-      }
+    });
+    d.addEventListener('click', function(e){
+      if (e.target === d || e.target.classList.contains('lightbox__close')) d.close();
     });
   })();
-  </script>
+
+  // Live Social Proof Toast
+  const buyers = [
+    { name: "Sabine M. aus Hamburg", time: "vor 2 Minuten" },
+    { name: "Maximilian R. aus Wien", time: "vor 4 Minuten" },
+    { name: "Julia B. aus Zürich", time: "vor 6 Minuten" },
+    { name: "Thomas K. aus München", time: "vor 8 Minuten" },
+    { name: "Elena S. aus Berlin", time: "vor 11 Minuten" },
+    { name: "Christian W. aus Bern", time: "vor 13 Minuten" },
+    { name: "Laura H. aus Köln", time: "vor 15 Minuten" },
+    { name: "Fabian G. aus Salzburg", time: "vor 18 Minuten" }
+  ];
+  const toast = document.getElementById('sales-toast');
+  const toastBuyer = document.getElementById('toast-buyer');
+  const toastTime = document.getElementById('toast-time');
+
+  function triggerToast() {
+    const buyer = buyers[Math.floor(Math.random() * buyers.length)];
+    if (toastBuyer) toastBuyer.textContent = buyer.name;
+    if (toastTime) toastTime.textContent = buyer.time;
+    if (toast) {
+      toast.classList.remove('is-hidden');
+      setTimeout(() => {
+        toast.classList.add('is-hidden');
+      }, 5000);
+    }
+  }
+  setTimeout(triggerToast, 4000);
+  setInterval(triggerToast, 18000);
+
+  // Sticky Mobile Bottom Bar
+  const mobileBar = document.getElementById('mobile-bottom-bar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 250) {
+      mobileBar.classList.remove('is-hidden');
+    } else {
+      mobileBar.classList.add('is-hidden');
+    }
+  });
+
+  // Exit Intent Modal
+  let exitModalTriggered = false;
+  const exitModal = document.getElementById('exit-modal');
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY <= 0 && !exitModalTriggered) {
+      exitModalTriggered = true;
+      exitModal.classList.remove('hidden');
+    }
+  });
+  document.getElementById('close-exit-modal')?.addEventListener('click', () => {
+    exitModal.classList.add('hidden');
+  });
+  document.getElementById('dismiss-exit-modal')?.addEventListener('click', () => {
+    exitModal.classList.add('hidden');
+  });
+</script>
+
+<!-- Dynamic UTM Forwarding Engine -->
+<script>
+(function() {
+  function passUtmsToCheckout() {
+    var currentSearch = window.location.search;
+    if (!currentSearch) return;
+    var currentParams = new URLSearchParams(currentSearch);
+    
+    var links = document.querySelectorAll('a[href*="hotmart.com"], a[href*="pay."], [data-utmify-checkout="true"]');
+    links.forEach(function(link) {
+      try {
+        var href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
+        var url = new URL(href, window.location.origin);
+        currentParams.forEach(function(val, key) {
+          url.searchParams.set(key, val);
+        });
+        link.setAttribute('href', url.toString());
+        link.setAttribute('target', '_self');
+      } catch(e) {}
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', passUtmsToCheckout);
+  } else {
+    passUtmsToCheckout();
+  }
+  window.addEventListener('load', passUtmsToCheckout);
+  document.addEventListener('click', function(e) {
+    var target = e.target.closest('a[href*="hotmart.com"], a[href*="pay."], [data-utmify-checkout="true"]');
+    if (target) {
+      passUtmsToCheckout();
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
