@@ -43,7 +43,7 @@
   <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Kompiliertes CSS (Atlas Design System) -->
-  <link rel="preload" href="img/mockup-hero.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="img/mockup-hero-abundant.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
@@ -186,7 +186,7 @@
 
     <!-- Produkt-Mockup 3D Hero -->
     <figure class="hero-mockup mt-10">
-      <img src="img/mockup-hero.webp" width="900" height="900" fetchpriority="high" decoding="async" alt="3D-Mockup von „Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch“ als digitales PDF mit 130 Seiten">
+      <img src="img/mockup-hero-abundant.webp" width="1200" height="896" fetchpriority="high" decoding="async" alt="Abundantes 3D-Mockup des Bundles: Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch mit iPad, GoodNotes, Bonus-Guides, Audiomeditationen und Reflexionskarten" class="w-full h-auto drop-shadow-2xl">
     </figure>
 
     <ul class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto text-left">
@@ -237,62 +237,64 @@
 <!-- ==========================================
      SECCIÓN 4: SHOWCASE (SEGUNDO CARRUSEL MARQUEE DE MÓDULOS)
      ========================================== -->
-<section class="py-12 px-4 bg-sand border-b border-line overflow-hidden">
+<section class="py-12 px-4 bg-sand border-b border-line overflow-hidden" id="seiten-vorschau">
   <div class="container-x mb-6 text-center">
     <p class="eyebrow">Modul-Vielfalt</p>
-    <h3 class="font-display font-extrabold uppercase text-lg sm:text-xl text-brand">Vom 21-Tage-Tracker bis zum somatischen Mapping</h3>
+    <h3 class="font-display font-extrabold uppercase text-lg sm:text-2xl text-brand">Vom 21-Tage-Tracker bis zum somatischen Mapping</h3>
+    <p class="text-xs text-muted-fg mt-1 sm:hidden">← Wische horizontal nach links, um alle Seiten zu sehen →</p>
   </div>
-  <div class="ticker-slow flex items-center gap-4 py-2">
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-05.webp" loading="lazy" decoding="async" alt="Schatten-Tracker" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">21-Tage Tracker</div>
+  <div class="showcase-slider">
+    <div class="showcase-card">
+      <span class="badge text-[10px] py-0.5 px-2 mb-2 inline-block">S. 18 · TRACKER</span>
+      <img src="img/sample-page-05.webp" loading="lazy" decoding="async" alt="Schatten-Tracker" class="w-full h-auto rounded-lg border border-line/60">
+      <div class="font-bold text-xs text-brand mt-2 truncate">21-Tage Tracker</div>
+      <div class="text-[10px] text-muted-fg truncate">Selbstbeobachtung</div>
     </div>
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-07.webp" loading="lazy" decoding="async" alt="Body-Mapping" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">Somatisches Mapping</div>
+    <div class="showcase-card">
+      <span class="badge text-[10px] py-0.5 px-2 mb-2 inline-block">S. 30 · SOMATIK</span>
+      <img src="img/sample-page-07.webp" loading="lazy" decoding="async" alt="Body-Mapping" class="w-full h-auto rounded-lg border border-line/60">
+      <div class="font-bold text-xs text-brand mt-2 truncate">Somatisches Mapping</div>
+      <div class="text-[10px] text-muted-fg truncate">Körpersignale lesen</div>
     </div>
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-09.webp" loading="lazy" decoding="async" alt="5 Kindheitswunden" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">5 Kindheitswunden</div>
+    <div class="showcase-card">
+      <span class="badge text-[10px] py-0.5 px-2 mb-2 inline-block">S. 42 · URSACHEN</span>
+      <img src="img/sample-page-09.webp" loading="lazy" decoding="async" alt="5 Kindheitswunden" class="w-full h-auto rounded-lg border border-line/60">
+      <div class="font-bold text-xs text-brand mt-2 truncate">5 Kindheitswunden</div>
+      <div class="text-[10px] text-muted-fg truncate">Ursprung heilen</div>
     </div>
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-11.webp" loading="lazy" decoding="async" alt="Verlassensangst" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">Verlassensangst</div>
+    <div class="showcase-card">
+      <span class="badge text-[10px] py-0.5 px-2 mb-2 inline-block">S. 54 · BINDUNG</span>
+      <img src="img/sample-page-11.webp" loading="lazy" decoding="async" alt="Verlassensangst" class="w-full h-auto rounded-lg border border-line/60">
+      <div class="font-bold text-xs text-brand mt-2 truncate">Verlassensangst</div>
+      <div class="text-[10px] text-muted-fg truncate">Muster auflösen</div>
     </div>
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-15.webp" loading="lazy" decoding="async" alt="Grenzen setzen" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">Grenzen setzen</div>
+    <div class="showcase-card">
+      <span class="badge text-[10px] py-0.5 px-2 mb-2 inline-block">S. 72 · ABGRENZUNG</span>
+      <img src="img/sample-page-15.webp" loading="lazy" decoding="async" alt="Grenzen setzen" class="w-full h-auto rounded-lg border border-line/60">
+      <div class="font-bold text-xs text-brand mt-2 truncate">Grenzen setzen</div>
+      <div class="text-[10px] text-muted-fg truncate">Ohne Schuldgefühle</div>
     </div>
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-21.webp" loading="lazy" decoding="async" alt="Goldener Schatten" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">Goldener Schatten</div>
+    <div class="showcase-card">
+      <span class="badge text-[10px] py-0.5 px-2 mb-2 inline-block">S. 96 · POTENZIAL</span>
+      <img src="img/sample-page-21.webp" loading="lazy" decoding="async" alt="Goldener Schatten" class="w-full h-auto rounded-lg border border-line/60">
+      <div class="font-bold text-xs text-brand mt-2 truncate">Goldener Schatten</div>
+      <div class="text-[10px] text-muted-fg truncate">Stärken integrieren</div>
     </div>
-
-    <!-- Duplicate for infinite marquee loop -->
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-05.webp" loading="lazy" decoding="async" alt="Schatten-Tracker" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">21-Tage Tracker</div>
+    <div class="showcase-card">
+      <span class="badge text-[10px] py-0.5 px-2 mb-2 inline-block">S. 115 · GANZHEIT</span>
+      <img src="img/sample-page-27.webp" loading="lazy" decoding="async" alt="Mandala der Ganzwerdung" class="w-full h-auto rounded-lg border border-line/60">
+      <div class="font-bold text-xs text-brand mt-2 truncate">Schatten-Mandala</div>
+      <div class="text-[10px] text-muted-fg truncate">Tiefenintegration</div>
     </div>
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-07.webp" loading="lazy" decoding="async" alt="Body-Mapping" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">Somatisches Mapping</div>
+    <div class="showcase-card">
+      <span class="badge text-[10px] py-0.5 px-2 mb-2 inline-block">S. 120 · DEKALOG</span>
+      <img src="img/sample-page-28.webp" loading="lazy" decoding="async" alt="10 Gebote" class="w-full h-auto rounded-lg border border-line/60">
+      <div class="font-bold text-xs text-brand mt-2 truncate">10 Gebote</div>
+      <div class="text-[10px] text-muted-fg truncate">Geheilter Mensch</div>
     </div>
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-09.webp" loading="lazy" decoding="async" alt="5 Kindheitswunden" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">5 Kindheitswunden</div>
-    </div>
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-11.webp" loading="lazy" decoding="async" alt="Verlassensangst" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">Verlassensangst</div>
-    </div>
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-15.webp" loading="lazy" decoding="async" alt="Grenzen setzen" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">Grenzen setzen</div>
-    </div>
-    <div class="w-44 bg-white p-2.5 rounded-xl border border-line flex-shrink-0 shadow-sm text-center">
-      <img src="img/sample-page-21.webp" loading="lazy" decoding="async" alt="Goldener Schatten" class="w-full h-auto rounded-lg">
-      <div class="font-bold text-xs text-fg mt-2 truncate">Goldener Schatten</div>
-    </div>
+  </div>
+  <div class="mt-6 text-center">
+    <a href="#kaufbereich" class="btn btn-sm"><span class="sm:hidden">Alle 130 Seiten sichern · 19,90 €</span><span class="hidden sm:inline">Alle 130 Seiten im Buch für 19,90 € freischalten</span></a>
   </div>
 </section>
 
@@ -418,12 +420,24 @@
 <!-- ==========================================
      SECCIÓN 9: LOOP BANNER & ZITAT C.G. JUNG
      ========================================== -->
-<section class="bg-brand text-white py-14 sm:py-16 px-4 text-center">
-  <div class="max-w-3xl mx-auto">
-    <p class="font-display font-extrabold text-xl sm:text-3xl leading-snug">„Bis du das Unbewusste bewusst machst, wird es dein Leben steuern und du wirst es Schicksal nennen.“</p>
-    <p class="mt-4 text-xs uppercase tracking-widest font-semibold text-white/80">— Carl Gustav Jung, Begründer der Analytischen Psychologie</p>
-    <div class="mt-8">
-      <a href="#kaufbereich" class="btn"><span class="sm:hidden">Jetzt starten · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt für nur 19,90&nbsp;€ starten</span></a>
+<section class="py-14 sm:py-20 px-4 bg-brand text-white relative overflow-hidden" id="jung-zitat">
+  <div class="max-w-3xl mx-auto relative z-10">
+    <div class="bg-brand-dark/90 border border-white/20 rounded-3xl p-6 sm:p-12 text-center shadow-2xl relative">
+      <div class="w-12 h-12 mx-auto mb-6 rounded-full bg-cta/15 border border-cta/30 flex items-center justify-center text-cta">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+      </div>
+      <blockquote class="font-display font-extrabold text-lg sm:text-2xl lg:text-3xl leading-snug tracking-tight text-white mb-6">
+        „Bis du das Unbewusste bewusst machst, wird es dein Leben steuern und du wirst es Schicksal nennen.“
+      </blockquote>
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs uppercase tracking-widest font-semibold text-white/90">
+        <span>Carl Gustav Jung</span>
+        <span class="text-cta">•</span>
+        <span class="text-white/70">Begründer der Analytischen Psychologie</span>
+      </div>
+      <div class="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#kaufbereich" class="btn w-full sm:w-auto"><span class="sm:hidden">Jetzt starten · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt für nur 19,90&nbsp;€ starten</span></a>
+        <span class="text-xs text-white/75 flex items-center gap-1.5"><svg class="w-4 h-4 text-cta shrink-0"><use href="#i-check"/></svg> Sofortiger Download · 7 Tage Garantie</span>
+      </div>
     </div>
   </div>
 </section>
@@ -476,7 +490,7 @@
           <blockquote>„Als Ärztin kenne ich die Theorie. Aber die somatische Übung 'Dialog der Zwei Hände' auf Seite 60 hat mir endlich geholfen, meine Wutausbrüche zu verstehen. Ein Meisterwerk.“</blockquote>
         </div>
         <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
-          <img src="img/avatar-01.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Dr. Katharina M." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <img src="img/avatar-01.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Dr. Katharina M." class="testi-avatar" width="52" height="52">
           <div>
             <div class="testi__name">Dr. Katharina M., 38</div>
             <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (München)</div>
@@ -491,7 +505,7 @@
           <blockquote>„Unglaublich wertvoll auf dem iPad mit GoodNotes! Jedes Mal wenn mich jemand triggert, nutze ich den Trigger-Kompass. Ich reagiere nicht mehr impulsiv, sondern bleibe ruhig.“</blockquote>
         </div>
         <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
-          <img src="img/avatar-02.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Stefan B." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <img src="img/avatar-02.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Stefan B." class="testi-avatar" width="52" height="52">
           <div>
             <div class="testi__name">Stefan B., 42</div>
             <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Wien)</div>
@@ -506,7 +520,7 @@
           <blockquote>„Das People-Pleasing Kapitel hat mir die Augen geöffnet. Ich habe zum ersten Mal ohne Schuldgefühle 'Nein' zu meiner Familie gesagt. Die somatischen Übungen geben sofortige Ruhe.“</blockquote>
         </div>
         <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
-          <img src="img/avatar-03.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Laura Z." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <img src="img/avatar-03.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Laura Z." class="testi-avatar" width="52" height="52">
           <div>
             <div class="testi__name">Laura Z., 29</div>
             <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Zürich)</div>
@@ -521,7 +535,7 @@
           <blockquote>„Mein innerer Kritiker hat mich jahrelang im Beruf gelähmt. Die Übungen zur Enttarnung der Ego-Schilde haben alles verändert. Ich trete endlich selbstbewusst auf.“</blockquote>
         </div>
         <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
-          <img src="img/avatar-04.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Michael R." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <img src="img/avatar-04.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Michael R." class="testi-avatar" width="52" height="52">
           <div>
             <div class="testi__name">Michael R., 35</div>
             <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Berlin)</div>
@@ -536,7 +550,7 @@
           <blockquote>„Die 50 Affirmationen im Bonusmaterial haben mein Herz tief berührt. Ich habe alte Wunden zu meinen Eltern in Frieden loslassen können. Unbezahlbar.“</blockquote>
         </div>
         <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
-          <img src="img/avatar-05.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Sabine W." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <img src="img/avatar-05.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Sabine W." class="testi-avatar" width="52" height="52">
           <div>
             <div class="testi__name">Sabine W., 47</div>
             <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Hamburg)</div>
@@ -551,7 +565,7 @@
           <blockquote>„Ich war erst skeptisch, ob ein Buch mir helfen kann. Aber die Kombination aus Psychologie und somatischer Erdung funktioniert sofort. Klare Empfehlung!“</blockquote>
         </div>
         <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
-          <img src="img/avatar-06.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Christian F." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <img src="img/avatar-06.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Christian F." class="testi-avatar" width="52" height="52">
           <div>
             <div class="testi__name">Christian F., 31</div>
             <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Bern)</div>
@@ -566,7 +580,7 @@
           <blockquote>„Das Arbeitsbuch ist wunderschön und tiefgründig gestaltet. Ich habe es mir ausgedruckt und nehme mir jeden Morgen 15 Minuten Zeit. Meine Beziehung ist viel harmonischer.“</blockquote>
         </div>
         <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
-          <img src="img/avatar-07.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Elena K." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <img src="img/avatar-07.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Elena K." class="testi-avatar" width="52" height="52">
           <div>
             <div class="testi__name">Elena K., 36</div>
             <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Köln)</div>
@@ -581,7 +595,7 @@
           <blockquote>„Statt monatelang auf einen Therapieplatz zu warten, konnte ich sofort anfangen. Die Übung zum Projektions-Spiegel auf Seite 24 hat meine Ehe gerettet. Danke von Herzen!“</blockquote>
         </div>
         <figcaption class="flex items-center gap-3 pt-3 border-t border-line mt-3">
-          <img src="img/avatar-08.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Thomas L." class="w-11 h-11 rounded-full object-cover border border-line shrink-0">
+          <img src="img/avatar-08.jpg" width="44" height="44" loading="lazy" decoding="async" alt="Thomas L." class="testi-avatar" width="52" height="52">
           <div>
             <div class="testi__name">Thomas L., 45</div>
             <div class="testi__ok text-xs"><svg class="w-3.5 h-3.5"><use href="#i-check"/></svg> Verifiziert (Frankfurt)</div>
@@ -608,28 +622,28 @@
         <div class="bonus__body"><div class="flex flex-wrap gap-2"><span class="badge">Bonus 1</span><span class="tag">Separates PDF · 3 Seiten</span></div>
           <h3>Der 90-Tage-Plan zur Schatten-Integration</h3>
           <p class="card-text">Dein roter Faden durch alle 130 Seiten: drei Phasen à 30 Tage, ein klarer Wochenfokus, ein 5-Minuten-Mini-Ritual für jeden Tag und ein Fortschritts-Tracker zum Abhaken.</p>
-          <p class="bonus__val">Wert: 19,00&nbsp;€</p></div>
+          <p class="bonus__val">Normalwert: <del class="line-through text-muted-fg font-semibold">19,00&nbsp;€</del> <span class="bonus__free-badge">HEUTE GRATIS (0&nbsp;€)</span></p></div>
       </article>
       <article class="bonus">
         <div class="bonus__media"><img src="img/mockup-bonus2.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D-Mockup des Bonus „Tägliche Praxis-Vorlagen“ (digitales PDF, im Arbeitsbuch enthalten)"><span class="bonus__page">S. 106–109</span></div>
         <div class="bonus__body"><div class="flex flex-wrap gap-2"><span class="badge">Bonus 2</span><span class="tag">Im Arbeitsbuch enthalten</span></div>
           <h3>Tägliche Praxis-Vorlagen</h3>
           <p class="card-text">Morgen-Check-in, Abend-Rückschau, wöchentlicher Schatten-Tracker und Trigger-Analysebogen – als Kopiervorlagen, die du immer wieder neu ausfüllen kannst.</p>
-          <p class="bonus__val">Wert: 15,00&nbsp;€</p></div>
+          <p class="bonus__val">Normalwert: <del class="line-through text-muted-fg font-semibold">15,00&nbsp;€</del> <span class="bonus__free-badge">HEUTE GRATIS (0&nbsp;€)</span></p></div>
       </article>
       <article class="bonus">
         <div class="bonus__media"><img src="img/mockup-bonus3.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D-Mockup des Bonus „Die 50 kraftvollsten Affirmationen“ (digitales PDF, im Arbeitsbuch enthalten)"><span class="bonus__page">S. 116–117</span></div>
         <div class="bonus__body"><div class="flex flex-wrap gap-2"><span class="badge">Bonus 3</span><span class="tag">Im Arbeitsbuch enthalten</span></div>
           <h3>Die 50 kraftvollsten Affirmationen</h3>
           <p class="card-text">50 Sätze des geheilten Schattenkindes, die dich im Alltag an deine neue innere Haltung erinnern – zum Lesen, Abschreiben oder Aufhängen.</p>
-          <p class="bonus__val">Wert: 14,00&nbsp;€</p></div>
+          <p class="bonus__val">Normalwert: <del class="line-through text-muted-fg font-semibold">14,00&nbsp;€</del> <span class="bonus__free-badge">HEUTE GRATIS (0&nbsp;€)</span></p></div>
       </article>
       <article class="bonus">
         <div class="bonus__media"><img src="img/mockup-bonus4.webp" width="900" height="900" loading="lazy" decoding="async" alt="3D-Mockup des Bonus „Glaubenssatz-Transformations-Matrix &amp; Grenzen-Planer“ (digitales PDF, im Arbeitsbuch enthalten)"><span class="bonus__page">S. 111–112</span></div>
         <div class="bonus__body"><div class="flex flex-wrap gap-2"><span class="badge">Bonus 4</span><span class="tag">Im Arbeitsbuch enthalten</span></div>
           <h3>Glaubenssatz-Transformations-Matrix &amp; Grenzen-Planer</h3>
           <p class="card-text">Übersetze alte Dogmen in neue Wahrheiten und lege fest, wie du deine Grenzen im Alltag klar definierst und hältst.</p>
-          <p class="bonus__val">Wert: 12,00&nbsp;€</p></div>
+          <p class="bonus__val">Normalwert: <del class="line-through text-muted-fg font-semibold">12,00&nbsp;€</del> <span class="bonus__free-badge">HEUTE GRATIS (0&nbsp;€)</span></p></div>
       </article>
     </div>
   </div>
@@ -638,42 +652,94 @@
 <!-- ==========================================
      SECCIÓN 13: CALCULADORA INTERACTIVA DE VALOR Y TIEMPO
      ========================================== -->
-<section class="section bg-white border-b border-line">
-  <div class="max-w-3xl mx-auto text-center">
+<section class="section bg-white border-b border-line" id="vergleich">
+  <div class="max-w-3xl mx-auto text-center container-x">
     <p class="eyebrow">Transparenter Vergleich</p>
     <h2>Interaktiver Zeit- &amp; Kosten-Rechner</h2>
-    <p class="sub">Vergleiche die typischen Wege der Persönlichkeitsentwicklung im deutschsprachigen Raum:</p>
+    <p class="sub">Warum 4.800+ Menschen im DACH-Raum diesen Weg der klassischen Therapie vorziehen:</p>
 
-    <div class="mt-10 card p-6 sm:p-8 text-left border border-line">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6 border-b border-line">
-        <div class="p-4 rounded-xl bg-sand border border-line">
-          <div class="text-xs uppercase font-extrabold text-muted-fg tracking-wider mb-2">Herkömmlicher Weg</div>
-          <div class="text-sm font-bold text-fg mb-2">Therapieplätze &amp; Einzelcoaching</div>
-          <ul class="text-xs text-muted-fg space-y-2 mb-3">
-            <li>⏳ <strong>6 bis 9 Monate</strong> durchschnittliche Wartezeit</li>
-            <li>💶 <strong>1.200 € bis 2.500 €</strong> Gesamtkosten</li>
-            <li>🚗 Feste Termine, Fahrzeiten &amp; Praxisbindung</li>
+    <div class="mt-8 comparison-card bg-sand/60 border border-line rounded-3xl p-5 sm:p-8 text-left shadow-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        
+        <!-- Herkömmlicher Weg -->
+        <div class="compare-box compare-box--old bg-white border border-red-200/70 rounded-2xl p-5 relative">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-red-700 text-[11px] font-bold uppercase tracking-wider mb-3">
+            <span>Herkömmlicher Weg</span>
+            <span>·</span>
+            <span>Teuer &amp; Mühsam</span>
+          </div>
+          <h3 class="font-display font-extrabold text-base text-fg mb-3">Therapie &amp; Einzel-Coaching</h3>
+          
+          <ul class="space-y-3 text-xs sm:text-sm text-fg/80 mb-5">
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">✕</span>
+              <span><strong>6 bis 9 Monate Wartezeit</strong> bis zum ersten Therapieplatz im DACH-Raum</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">✕</span>
+              <span><strong>1.200&nbsp;€ bis 2.500&nbsp;€</strong> Gesamtkosten für private Einzelsitzungen</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">✕</span>
+              <span>Starre Termine, Anfahrtswege und monatelange Praxisbindung</span>
+            </li>
           </ul>
-          <div class="text-xs font-bold text-fg">Gesamtkosten: ca. 1.850 €</div>
+          
+          <div class="pt-3 border-t border-line flex items-center justify-between text-xs">
+            <span class="text-muted-fg font-medium">Geschätzter Gesamtaufwand:</span>
+            <span class="font-extrabold text-red-600 text-sm">ca. 1.850&nbsp;€</span>
+          </div>
         </div>
-        <div class="p-4 rounded-xl bg-brand/5 border border-brand/20">
-          <div class="text-xs uppercase font-extrabold text-brand tracking-wider mb-2">Unser Arbeitsbuch</div>
-          <div class="text-sm font-bold text-fg mb-2">Schattenarbeit nach C.G. Jung</div>
-          <ul class="text-xs text-muted-fg space-y-2 mb-3">
-            <li>⚡ <strong>0 Tage Wartezeit</strong> — sofortiger Beginn in 60s</li>
-            <li>🛋️ <strong>15 Min./Tag</strong> in deinem eigenen Zuhause</li>
-            <li>🛡️ <strong>7 Tage Garantie</strong> ohne Risiko</li>
+
+        <!-- Unser Arbeitsbuch -->
+        <div class="compare-box compare-box--new bg-white border-2 border-cta rounded-2xl p-5 relative shadow-md">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cta/15 text-cta text-[11px] font-extrabold uppercase tracking-wider mb-3">
+            <svg class="w-3.5 h-3.5 fill-current"><use href="#i-star"/></svg>
+            <span>Die smarte Lösung</span>
+            <span>·</span>
+            <span>Empfohlen</span>
+          </div>
+          <h3 class="font-display font-extrabold text-base text-brand mb-3">Schattenarbeit nach C.G. Jung</h3>
+          
+          <ul class="space-y-3 text-xs sm:text-sm text-fg/90 mb-5">
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-cta/20 text-cta flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">✓</span>
+              <span><strong>0 Tage Wartezeit:</strong> Direkter Download und Start in 60 Sekunden</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-cta/20 text-cta flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">✓</span>
+              <span><strong>15 Min. pro Tag:</strong> In deinem Tempo gemütlich auf Sofa oder Bett</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-cta/20 text-cta flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">✓</span>
+              <span><strong>100% Anonym &amp; Flexibel:</strong> Auf iPad (GoodNotes), PC oder Druck</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-cta/20 text-cta flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">✓</span>
+              <span><strong>Strikte 7-Tage-Garantie:</strong> 100% risikofreie Geld-zurück-Absicherung</span>
+            </li>
           </ul>
-          <div class="font-display font-extrabold text-xl text-brand">Einmalig 19,90 €</div>
+          
+          <div class="pt-3 border-t border-line flex items-center justify-between">
+            <span class="text-xs text-muted-fg font-medium">Einmaliger Einführungspreis:</span>
+            <div class="text-right">
+              <span class="text-xs text-muted-fg line-through mr-1">97,00&nbsp;€</span>
+              <span class="font-display font-extrabold text-brand text-lg">19,90&nbsp;€</span>
+            </div>
+          </div>
         </div>
+
       </div>
 
-      <div class="pt-6 text-center">
-        <div class="text-xs text-muted-fg mb-1">Deine Ersparnis mit dem Arbeitsbuch:</div>
-        <div class="font-display font-extrabold text-2xl sm:text-3xl text-brand mb-4">
-          Über <span class="text-cta">1.830 €</span> und <span class="text-cta">180+ Tage Wartezeit</span> gespart
+      <!-- Total Savings Banner -->
+      <div class="mt-6 p-4 sm:p-5 rounded-2xl bg-brand text-white flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div>
+          <div class="text-xs text-white/70 uppercase tracking-wider font-semibold">Dein Ersparnis-Vorteil heute:</div>
+          <div class="font-display font-extrabold text-xl sm:text-2xl text-white">
+            Über <span class="text-cta">1.830&nbsp;€</span> &amp; <span class="text-cta">180+ Tage</span> Wartezeit gespart
+          </div>
         </div>
-        <a href="#kaufbereich" class="btn"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Direkt für 19,90&nbsp;€ starten</span></a>
+        <a href="#kaufbereich" class="btn w-full sm:w-auto shrink-0"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt 1.830&nbsp;€ sparen · 19,90&nbsp;€</span></a>
       </div>
     </div>
   </div>
