@@ -1,0 +1,334 @@
+<body class="bg-white text-fg font-sans antialiased">
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.5a.56.56 0 0 1 1.04 0l2.13 5.11a.56.56 0 0 0 .48.35l5.52.44c.5.04.7.66.32.99l-4.2 3.6a.56.56 0 0 0-.18.56l1.28 5.39a.56.56 0 0 1-.84.61l-4.73-2.89a.56.56 0 0 0-.59 0l-4.72 2.89a.56.56 0 0 1-.84-.61l1.28-5.39a.56.56 0 0 0-.18-.56l-4.2-3.6a.56.56 0 0 1 .32-.99l5.52-.44a.56.56 0 0 0 .47-.35z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="i-tablet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5h8"/><path d="M13 12h8"/><path d="M13 19h8"/><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></symbol>
+  <symbol id="i-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+</svg>
+
+<!-- 1. Hinweisleiste (nicht sticky) -->
+<aside aria-label="Hinweis" class="bg-brand text-white border-b border-white/10">
+  <div class="container-x flex items-center justify-center sm:justify-between gap-4 py-3 sm:py-2">
+    <p class="font-display font-extrabold uppercase tracking-wide text-[11px] sm:text-sm leading-snug text-center sm:text-left">
+      Digitales PDF · 130 Seiten<span class="hidden sm:inline"> · Für Tablet &amp; Druck</span> · Inkl. 4 Boni
+    </p>
+    <a href="#kaufbereich" class="btn-sm hidden sm:inline-flex">Zum Angebot</a>
+  </div>
+</aside>
+
+<!-- 2. Hero -->
+<header class="bg-white pt-10 pb-16 sm:pb-20 lg:pb-24 px-4 overflow-hidden">
+  <div class="container-x text-center">
+    <span class="pill-trust"><svg class="w-3.5 h-3.5"><use href="#i-lock"/></svg> Tiefenpsychologische Selbstführung nach C.&nbsp;G. Jung</span>
+    <p class="mt-6 font-display font-extrabold uppercase tracking-widest text-xs sm:text-sm text-brand">Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch</p>
+    <h1 class="mt-3 max-w-4xl mx-auto">Befreie dich von den <span class="text-brand-mid">unbewussten Blockaden</span>, die dein Leben, deine Beziehungen und deinen Erfolg sabotieren.</h1>
+    <p class="lead mt-5">Das strukturierte <strong class="text-fg font-semibold">130-Seiten-Arbeitsbuch</strong> für den deutschsprachigen Raum: Verwandle Schattenarbeit und die Heilung deines Inneren Kindes in eine sichere, somatische und sofort anwendbare tägliche Praxis.</p>
+
+    <div class="mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-muted">
+      <span class="flex text-warning" aria-hidden="true"><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg></span>
+      <span class="font-bold text-fg">4.9 / 5</span>
+      <span>• Über 4.800 Leser in Deutschland, Österreich &amp; der Schweiz</span>
+    </div>
+
+    <!-- Produkt-Mockup: digitales PDF auf dem Tablet -->
+    <div class="hero-stage mt-10">
+      <img class="hero-page hero-page--l" src="img/sample-page-02-640.webp" width="640" height="905" alt="Beispielseite 8 aus dem Arbeitsbuch: Der Trigger-Kompass" decoding="async">
+      <img class="hero-page hero-page--r" src="img/sample-page-60-dialog-640.webp" width="640" height="904" alt="Beispielseite 60 aus dem Arbeitsbuch: Der Dialog der zwei Hände" decoding="async">
+      <figure class="tablet">
+        <div class="tablet__screen">
+          <div class="tablet__bar"><span>Arbeitsbuch.pdf</span><span>Seite 1 / 130</span></div>
+          <img src="img/cover-ultimative.webp" width="800" height="800" fetchpriority="high" decoding="async" alt="Titelseite von „Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch“ als digitales PDF auf einem Tablet">
+        </div>
+      </figure>
+    </div>
+
+    <ul class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto text-left">
+      <li class="chip"><svg class="w-4 h-4 text-cta shrink-0"><use href="#i-check"/></svg><span><b>130 A4-Seiten</b> · strukturiert</span></li>
+      <li class="chip"><svg class="w-4 h-4 text-cta shrink-0"><use href="#i-check"/></svg><span><b>Tablet &amp; Druck</b> · GoodNotes &amp; PDF</span></li>
+      <li class="chip"><svg class="w-4 h-4 text-cta shrink-0"><use href="#i-check"/></svg><span><b>4 Gratis-Boni</b> · im Wert von 60&nbsp;€</span></li>
+    </ul>
+
+    <div class="mt-8">
+      <a href="#kaufbereich" class="btn"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt Arbeitsbuch sichern · 19,90&nbsp;€</span></a>
+      <ul class="micro">
+        <li><svg><use href="#i-check"/></svg>130 geführte Seiten</li>
+        <li><svg><use href="#i-check"/></svg>Für Tablet &amp; Druck</li>
+        <li><svg><use href="#i-check"/></svg>7-Tage-Garantie</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- 3. Problem / Muster -->
+<section class="section bg-white border-t border-line">
+  <div class="container-x">
+    <p class="eyebrow">Die unbewussten Muster</p>
+    <h2>Erkennst du dich in diesen wiederkehrenden Situationen wieder?</h2>
+    <p class="sub">Die meisten Menschen glauben, sie hätten ein Disziplin- oder Motivationsproblem. In Wahrheit steuern ungelöste Schatten und verletzte Anteile des Inneren Kindes ihr Verhalten.</p>
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+      <div class="card card--sand flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Chronisches People-Pleasing</h3><p class="card-text">Du kannst schwer „Nein“ sagen, passt dich ständig den Erwartungen anderer an und fühlst dich innerlich erschöpft und ausgenutzt.</p></div></div>
+      <div class="card card--sand flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Plötzliche emotionale Trigger</h3><p class="card-text">Ein bestimmter Tonfall, Kritik oder Zurückweisung lösen sofort intensive emotionale Reaktionen aus, die du rational kaum kontrollieren kannst.</p></div></div>
+      <div class="card card--sand flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Unerklärliche Selbstsabotage</h3><p class="card-text">Immer wenn du kurz davor stehst, ein wichtiges Ziel zu erreichen oder eine erfüllende Beziehung zu leben, machst du unbewusst alles wieder zunichte.</p></div></div>
+      <div class="card card--sand flex gap-4"><svg class="w-5 h-5 text-warning shrink-0 mt-0.5"><use href="#i-alert"/></svg><div><h3>Der unerbittliche innere Kritiker</h3><p class="card-text">Egal, was du erreichst: Eine leise Stimme flüstert dir ständig zu, dass du nicht klug, schlank, erfolgreich oder liebenswert genug bist.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Zitat-Band -->
+<section class="bg-brand text-white py-12 sm:py-14 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="font-display font-bold text-lg sm:text-2xl leading-snug">„Bis du das Unbewusste bewusst machst, wird es dein Leben steuern und du wirst es Schicksal nennen.“</p>
+    <p class="mt-4 text-[11px] sm:text-xs uppercase tracking-widest font-semibold text-white/80">— Carl Gustav Jung, Begründer der Analytischen Psychologie</p>
+  </div>
+</section>
+
+<!-- 5. Lösung / Produkt -->
+<section class="section bg-sand">
+  <div class="container-x">
+    <p class="eyebrow">Die ganzheitliche Methode</p>
+    <h2>Was ist das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch?</h2>
+    <p class="sub">Es ist kein trockenes Theoriebuch, das du nach zwei Kapiteln ins Regal stellst. Es ist ein <strong class="text-fg">präzise strukturiertes Arbeitsinstrument</strong>, das dich Schritt für Schritt anleitet, deine verdrängten Anteile ohne Angst zu erforschen und zu integrieren.</p>
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="card"><svg class="w-6 h-6 text-brand"><use href="#i-book"/></svg><h3 class="mt-3">130 angeleitete Seiten</h3><p class="card-text">Keine leeren Seiten ohne Anleitung. Jede Seite enthält fundierte psychologische Reflexionsfragen, Checklisten, Archetypen-Arbeit und somatische Übungen.</p></div>
+      <div class="card"><svg class="w-6 h-6 text-brand"><use href="#i-leaf"/></svg><h3 class="mt-3">Sicher &amp; somatisch</h3><p class="card-text">Schattenarbeit ohne Körperarbeit überfordert oft. Unsere Methoden integrieren Nervensystem-Regulation, damit du dich während des gesamten Prozesses geerdet und sicher fühlst.</p></div>
+      <div class="card"><svg class="w-6 h-6 text-brand"><use href="#i-tablet"/></svg><h3 class="mt-3">Digital &amp; druckbar</h3><p class="card-text">Nutze es interaktiv auf deinem iPad/Tablet mit GoodNotes, Notability oder als beschreibbares PDF am Laptop – oder drucke es im klassischen A4-Format aus.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Galerie -->
+<section class="section bg-brand text-white" id="einblick">
+  <div class="container-x">
+    <p class="eyebrow eyebrow--dark">Visueller Einblick</p>
+    <h2 class="text-white">Ein Blick in dein 130-Seiten-Arbeitsbuch</h2>
+    <p class="sub sub--dark">Jede Seite wurde mit größter psychologischer Sorgfalt gestaltet. Hier siehst du fünf Beispielseiten aus verschiedenen Teilen des Arbeitsbuchs – tippe auf eine Seite, um sie zu vergrößern.</p>
+    <ul class="gallery mt-10">
+      <li><button type="button" class="g-item" data-full="img/sample-page-01.webp" data-caption="Seite 5 – Carl Gustav Jung &amp; der Schatten"><img src="img/sample-page-01-640.webp" width="640" height="904" loading="lazy" decoding="async" alt="Beispielseite 5: Carl Gustav Jung und der Schatten"><span class="g-zoom"><svg class="w-4 h-4"><use href="#i-zoom"/></svg></span></button>
+        <div class="g-cap"><span class="badge">S. 5</span><span class="g-title">Jung &amp; der Schatten</span><span class="g-sub">Das Fundament</span></div></li>
+      <li><button type="button" class="g-item" data-full="img/sample-page-02.webp" data-caption="Seite 8 – Der Trigger-Kompass"><img src="img/sample-page-02-640.webp" width="640" height="905" loading="lazy" decoding="async" alt="Beispielseite 8: Der Trigger-Kompass"><span class="g-zoom"><svg class="w-4 h-4"><use href="#i-zoom"/></svg></span></button>
+        <div class="g-cap"><span class="badge">S. 8</span><span class="g-title">Der Trigger-Kompass</span><span class="g-sub">Projektionen erkennen</span></div></li>
+      <li><button type="button" class="g-item" data-full="img/sample-page-04.webp" data-caption="Seite 12 – Die 6 Schutzschilde des Egos"><img src="img/sample-page-04-640.webp" width="640" height="905" loading="lazy" decoding="async" alt="Beispielseite 12: Die 6 Schutzschilde des Egos"><span class="g-zoom"><svg class="w-4 h-4"><use href="#i-zoom"/></svg></span></button>
+        <div class="g-cap"><span class="badge">S. 12</span><span class="g-title">Die 6 Schutzschilde des Egos</span><span class="g-sub">Abwehrmechanismen</span></div></li>
+      <li><button type="button" class="g-item" data-full="img/sample-page-60-dialog.webp" data-caption="Seite 60 – Der Dialog der zwei Hände"><img src="img/sample-page-60-dialog-640.webp" width="640" height="904" loading="lazy" decoding="async" alt="Beispielseite 60: Der Dialog der zwei Hände"><span class="g-zoom"><svg class="w-4 h-4"><use href="#i-zoom"/></svg></span></button>
+        <div class="g-cap"><span class="badge">S. 60</span><span class="g-title">Der Dialog der zwei Hände</span><span class="g-sub">Reparenting-Praxis</span></div></li>
+      <li><button type="button" class="g-item" data-full="img/sample-page-27.webp" data-caption="Seite 115 – Das Mandala der Ganzwerdung"><img src="img/sample-page-27-640.webp" width="640" height="905" loading="lazy" decoding="async" alt="Beispielseite 115: Das Mandala der Ganzwerdung"><span class="g-zoom"><svg class="w-4 h-4"><use href="#i-zoom"/></svg></span></button>
+        <div class="g-cap"><span class="badge">S. 115</span><span class="g-title">Das Mandala der Ganzwerdung</span><span class="g-sub">Integration</span></div></li>
+    </ul>
+    <div class="mt-10 text-center">
+      <a href="#kaufbereich" class="btn"><span class="sm:hidden">Alle 130 Seiten freischalten</span><span class="hidden sm:inline">Alle 130 Seiten für 19,90&nbsp;€ freischalten</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Module -->
+<section class="section bg-white">
+  <div class="container-x">
+    <p class="eyebrow">Der Aufbau des Arbeitsbuchs</p>
+    <h2>Dein 5-Stufen-Weg zur vollständigen Integration</h2>
+    <p class="sub">Vom Fundament bis zur täglichen Praxis: 130 Seiten in fünf klar aufeinander aufbauenden Teilen.</p>
+    <ol class="mt-10 max-w-3xl mx-auto space-y-4">
+      <li class="card module"><div class="module__head"><span class="badge badge--brand">Teil 1 · Seiten 1–20</span><span class="module__meta">Das Fundament · 20 Seiten</span></div>
+        <h3>Die Psychologie des Schattens &amp; des Inneren Kindes</h3>
+        <p class="card-text">Carl Gustav Jung &amp; der Schatten, Sonnenkind und Schattenkind, die 4 Ur-Wunden der Kindheit (Ablehnung, Verlassenwerden, Demütigung, Verrat), der Trigger-Kompass, deine Schatten-Selbstdiagnose, die 6 Schutzschilde des Egos, die Polyvagal-Theorie in einfachen Worten und dein Sicherheits-Anker zur Erdung (5-4-3-2-1).</p></li>
+      <li class="card module"><div class="module__head"><span class="badge badge--brand">Modul I · Seiten 21–45</span><span class="module__meta">25 Seiten Praxis</span></div>
+        <h3>Die Demaskierung der Schatten</h3>
+        <p class="card-text">24 Tagesübungen zu Wut, Neid, Bestätigungssucht, Perfektionismus, Kontrolle, Eifersucht und Selbstsabotage: Du entmachtest deinen inneren Kritiker, setzt Grenzen ohne erdrückende Schuldgefühle und entdeckst deinen Goldenen Schatten – deine verdrängten Gaben.</p></li>
+      <li class="card module"><div class="module__head"><span class="badge badge--brand">Modul II · Seiten 46–75</span><span class="module__meta">30 Seiten Heilung</span></div>
+        <h3>Die Heilung des Inneren Kindes</h3>
+        <p class="card-text">Erste Kontaktaufnahme mit deinem kleinen Ich, verbotene Gefühle und die Glaubenssätze deiner Eltern, das Reparenting-Prinzip, der Dialog der zwei Hände (S. 60) mit deiner nicht-dominanten Hand, der unzensierte Wutbrief (niemals absenden) und das Vergebungs-Ritual für dich selbst (S. 68).</p></li>
+      <li class="card module"><div class="module__head"><span class="badge badge--brand">Modul III · Seiten 76–105</span><span class="module__meta">30 Seiten Integration</span></div>
+        <h3>Die Kunst der Schatten-Integration</h3>
+        <p class="card-text">Schatten als Treibstoff, Kompass und Aufrichtung, die Glaubenssatz-Umkehr, das Archetypen-Modell (Krieger, Magier, Liebender, König/Königin), Rückfall-Prävention, die heilige Macht des Neins und Kintsugi der Seele – plus 10 Notfall-Werkzeuge und das 3-Minuten-Reset-Protokoll für akute Momente.</p></li>
+      <li class="card module"><div class="module__head"><span class="badge badge--brand">Modul IV · Seiten 106–130</span><span class="module__meta">25 Seiten tägliche Praxis</span></div>
+        <h3>Tägliche Praxis, Worksheets &amp; Abschluss</h3>
+        <p class="card-text">Morgen-Check-in, Abend-Rückschau, wöchentlicher Schatten-Tracker, Trigger-Analysebogen, Dialog-Bogen, Glaubenssatz-Transformations-Matrix, Grenzen-Planer, somatische Übungen, Atemkarten (4-7-8 &amp; Box-Breathing), das Mandala der Ganzwerdung, 50 Affirmationen, Vorher-Nachher-Vergleich und das Zertifikat deiner inneren Heimkehr.</p></li>
+    </ol>
+    <p class="mt-6 text-center text-sm text-muted max-w-2xl mx-auto">Zusätzlich erhältst du den <strong class="text-fg">90-Tage-Plan zur Schatten-Integration</strong> als separates Bonus-PDF – er führt dich in drei Phasen durch alle 130 Seiten.</p>
+  </div>
+</section>
+
+<!-- 8. Stimmen -->
+<section class="section bg-sand">
+  <div class="container-x">
+    <div class="text-center"><span class="pill-rating"><svg class="w-4 h-4 text-warning"><use href="#i-star"/></svg> 4.9 / 5</span></div>
+    <h2 class="mt-4">Was Leserinnen &amp; Leser aus der DACH-Region sagen</h2>
+    <p class="sub">Verifizierte Käufe über Hotmart aus Deutschland, Österreich &amp; der Schweiz</p>
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <figure class="card testi"><div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>„Ich habe jahrelang Podcasts gehört und Bücher gelesen, aber nie gewusst, wo ich anfangen soll. Die Übung mit dem 'Dialog der Zwei Hände' auf Seite 78 hat mich zu Tränen gerührt. Ich verstehe meine Wutanfälle endlich.“</blockquote>
+        <figcaption><span class="testi__name">Dr. Katharina M., 38</span><span class="testi__ok"><svg class="w-4 h-4"><use href="#i-check"/></svg> Verifizierter Kauf (München)</span></figcaption></figure>
+      <figure class="card testi"><div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>„Unglaublich wertvoll auf dem iPad mit GoodNotes! Jedes Mal wenn mich jemand triggert, nutze ich den Trigger-Kompass. Ich reagiere nicht mehr impulsiv, sondern bleibe ruhig. 19,90 € sind lächerlich günstig dafür.“</blockquote>
+        <figcaption><span class="testi__name">Stefan B., 42</span><span class="testi__ok"><svg class="w-4 h-4"><use href="#i-check"/></svg> Verifizierter Kauf (Wien)</span></figcaption></figure>
+      <figure class="card testi"><div class="stars" aria-label="5 von 5 Sternen"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>„Das People-Pleasing Kapitel hat mir die Augen geöffnet. Ich habe zum ersten Mal ohne Schuldgefühle 'Nein' zu meiner Familie gesagt. Die somatischen Übungen geben sofortige körperliche Entspannung.“</blockquote>
+        <figcaption><span class="testi__name">Laura Z., 29</span><span class="testi__ok"><svg class="w-4 h-4"><use href="#i-check"/></svg> Verifizierter Kauf (Zürich)</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Boni -->
+<section class="section bg-brand text-white" id="boni">
+  <div class="container-x">
+    <p class="eyebrow eyebrow--dark">Inklusive</p>
+    <h2 class="text-white">Deine 4 Boni im Wert von 60&nbsp;€</h2>
+    <p class="sub sub--dark">Bei deiner Bestellung erhältst du diese vier Boni ohne Aufpreis dazu. Bonus 1 ist ein separates PDF, die Boni 2–4 sind besonders wertvolle Vorlagen, die direkt im Arbeitsbuch enthalten sind.</p>
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <article class="bonus">
+        <div class="bonus__media"><img src="img/bonus-90-tage-plan.webp" width="440" height="622" loading="lazy" decoding="async" alt="Vorschau der ersten Seite des Bonus-PDFs „Der 90-Tage-Plan zur Schatten-Integration“"></div>
+        <div class="bonus__body"><div class="flex flex-wrap gap-2"><span class="badge">Bonus 1</span><span class="tag">Separates PDF · 3 Seiten</span></div>
+          <h3>Der 90-Tage-Plan zur Schatten-Integration</h3>
+          <p class="card-text">Dein roter Faden durch alle 130 Seiten: drei Phasen à 30 Tage, ein klarer Wochenfokus, ein 5-Minuten-Mini-Ritual für jeden Tag und ein Fortschritts-Tracker zum Abhaken.</p>
+          <p class="bonus__val">Wert: 19,00&nbsp;€</p></div>
+      </article>
+      <article class="bonus">
+        <div class="bonus__media bonus__media--icon"><svg><use href="#i-calendar"/></svg><span>S. 106–109</span></div>
+        <div class="bonus__body"><div class="flex flex-wrap gap-2"><span class="badge">Bonus 2</span><span class="tag">Im Arbeitsbuch enthalten</span></div>
+          <h3>Tägliche Praxis-Vorlagen</h3>
+          <p class="card-text">Morgen-Check-in, Abend-Rückschau, wöchentlicher Schatten-Tracker und Trigger-Analysebogen – als Kopiervorlagen, die du immer wieder neu ausfüllen kannst.</p>
+          <p class="bonus__val">Wert: 15,00&nbsp;€</p></div>
+      </article>
+      <article class="bonus">
+        <div class="bonus__media bonus__media--icon"><svg><use href="#i-heart"/></svg><span>S. 116–117</span></div>
+        <div class="bonus__body"><div class="flex flex-wrap gap-2"><span class="badge">Bonus 3</span><span class="tag">Im Arbeitsbuch enthalten</span></div>
+          <h3>Die 50 kraftvollsten Affirmationen</h3>
+          <p class="card-text">50 Sätze des geheilten Schattenkindes, die dich im Alltag an deine neue innere Haltung erinnern – zum Lesen, Abschreiben oder Aufhängen.</p>
+          <p class="bonus__val">Wert: 14,00&nbsp;€</p></div>
+      </article>
+      <article class="bonus">
+        <div class="bonus__media bonus__media--icon"><svg><use href="#i-grid"/></svg><span>S. 111–112</span></div>
+        <div class="bonus__body"><div class="flex flex-wrap gap-2"><span class="badge">Bonus 4</span><span class="tag">Im Arbeitsbuch enthalten</span></div>
+          <h3>Glaubenssatz-Transformations-Matrix &amp; Grenzen-Planer</h3>
+          <p class="card-text">Übersetze alte Dogmen in neue Wahrheiten und lege fest, wie du deine Grenzen im Alltag klar definierst und hältst.</p>
+          <p class="bonus__val">Wert: 12,00&nbsp;€</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Angebot -->
+<section class="section bg-white">
+  <div class="container-x">
+    <p class="eyebrow">Exklusives DACH-Paket</p>
+    <h2>Alles, was du für deine vollständige Reise brauchst</h2>
+    <p class="sub">Wenn du heute bestellst, erhältst du das 130-Seiten-Arbeitsbuch plus alle 4 Boni – Gesamtwert (Buch&nbsp;+&nbsp;4&nbsp;Boni): 97,00&nbsp;€ – für einmalig 19,90&nbsp;€.</p>
+
+    <div id="kaufbereich" class="offer mt-10">
+      <span class="offer__badge"><svg class="w-3.5 h-3.5"><use href="#i-gift"/></svg> Arbeitsbuch + 4 Boni</span>
+      <h3 class="offer__title">Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch</h3>
+      <div class="offer__grid">
+        <figure class="tablet tablet--sm">
+          <div class="tablet__screen">
+            <div class="tablet__bar"><span>Arbeitsbuch.pdf</span><span>Seite 1 / 130</span></div>
+            <img src="img/cover-ultimative.webp" width="800" height="800" loading="lazy" decoding="async" alt="Titelseite von „Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch“ als digitales PDF auf einem Tablet">
+          </div>
+        </figure>
+        <div>
+          <ul class="breakdown">
+            <li><span><svg><use href="#i-check"/></svg><span class="t">Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch (130&nbsp;Seiten, PDF)</span></span><b>37,00&nbsp;€</b></li>
+            <li><span><svg class="gift"><use href="#i-gift"/></svg><span class="t">Bonus 1: Der 90-Tage-Plan zur Schatten-Integration <em>(separates PDF)</em></span></span><b>19,00&nbsp;€</b></li>
+            <li><span><svg class="gift"><use href="#i-gift"/></svg><span class="t">Bonus 2: Tägliche Praxis-Vorlagen <em>(im Arbeitsbuch, S.&nbsp;106–109)</em></span></span><b>15,00&nbsp;€</b></li>
+            <li><span><svg class="gift"><use href="#i-gift"/></svg><span class="t">Bonus 3: Die 50 kraftvollsten Affirmationen <em>(im Arbeitsbuch, S.&nbsp;116–117)</em></span></span><b>14,00&nbsp;€</b></li>
+            <li><span><svg class="gift"><use href="#i-gift"/></svg><span class="t">Bonus 4: Glaubenssatz-Transformations-Matrix &amp; Grenzen-Planer <em>(im Arbeitsbuch, S.&nbsp;111–112)</em></span></span><b>12,00&nbsp;€</b></li>
+            <li class="breakdown__total"><span>Gesamtwert (Buch + 4 Boni)</span><b>97,00&nbsp;€</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="offer__price">
+        <p class="offer__pre">Dein Preis heute – einmalig</p>
+        <p class="offer__amount">19,90&nbsp;€</p>
+        <p class="offer__save">Du sparst über 75&nbsp;% (77,10&nbsp;€ gegenüber dem Gesamtwert)</p>
+      </div>
+
+      <a href="https://pay.hotmart.com/D108259009E?off=5ql0a5p8&checkoutMode=10" target="_self" data-utmify-checkout="true" class="btn btn--full"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt Arbeitsbuch sichern</span></a>
+
+      <div class="offer__trust">
+        <div class="offer__pay">
+            <span>Klarna (Rechnung / Sofort)</span> • <span>PayPal</span> • <span>Kreditkarte</span> • <span>Apple Pay</span> • <span>SEPA</span>
+          </div>
+        <p>Digitales PDF mit 130 Seiten + 4 Boni – zum Ausfüllen am Tablet oder zum Ausdrucken.</p>
+      </div>
+    </div>
+    <ul class="micro micro--center mt-6">
+      <li><svg><use href="#i-lock"/></svg>Sichere Bezahlung über Hotmart</li>
+      <li><svg><use href="#i-shield"/></svg>7-Tage-Zufriedenheitsgarantie</li>
+      <li><svg><use href="#i-check"/></svg>Einmalzahlung, kein Abo</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 11. Garantie -->
+<section class="section bg-sand">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="seal" aria-hidden="true"><svg class="w-8 h-8"><use href="#i-shield"/></svg><span class="seal__n">7</span><span class="seal__t">Tage Garantie</span></div>
+    <h2 class="mt-6 text-brand">Unsere 7-Tage-Zufriedenheitsgarantie</h2>
+    <p class="mt-4 text-sm sm:text-base text-muted leading-relaxed">Wir möchten, dass du diese Entscheidung mit völligem Seelenfrieden triffst. Lade dir das Arbeitsbuch herunter und teste die ersten Übungen 7 Tage lang in Ruhe. Wenn du nicht spürst, dass dir dieses Buch mehr Klarheit und innere Ruhe schenkt, sende uns innerhalb von <strong class="text-fg">7 Tagen</strong> eine kurze E-Mail und du erhältst 100&nbsp;% deines Kaufpreises zurückerstattet. Ohne Wenn und Aber.</p>
+  </div>
+</section>
+
+<!-- 12. FAQ -->
+<section class="section bg-white">
+  <div class="max-w-3xl mx-auto">
+    <p class="eyebrow">Transparenz &amp; Klarheit</p>
+    <h2>Häufig gestellte Fragen (FAQ)</h2>
+    <div class="mt-10 space-y-3">
+      <details class="faq" open><summary><span>In welchem Format erhalte ich das Buch?</span><svg><use href="#i-chev"/></svg></summary>
+        <p>Nach dem Kauf erhältst du das Arbeitsbuch als hochauflösende PDF-Datei. Diese ist vollständig optimiert für Tablet-Apps wie GoodNotes, Notability und Samsung Notes, lässt sich direkt am PC ausfüllen oder im A4-Format ausdrucken. Den 90-Tage-Plan (Bonus 1) erhältst du als separates PDF; die Boni 2–4 sind im Arbeitsbuch enthalten.</p></details>
+      <details class="faq"><summary><span>Ist das Buch auch für absolute Einsteiger geeignet?</span><svg><use href="#i-chev"/></svg></summary>
+        <p>Ja, absolut. Wir setzen keinerlei Vorwissen in Psychologie voraus. Alle Konzepte von C.&nbsp;G. Jung und der Inneren-Kind-Arbeit werden in einfacher, verständlicher deutscher Sprache erklärt und mit alltagsnahen Beispielen begleitet.</p></details>
+      <details class="faq"><summary><span>Ersetzt dieses Arbeitsbuch eine Psychotherapie?</span><svg><use href="#i-chev"/></svg></summary>
+        <p>Nein. Dieses Arbeitsbuch dient der tiefenpsychologischen Selbstreflexion, Persönlichkeitsentwicklung und emotionalen Selbstführung gesunder Erwachsener. Es ist kein Ersatz für eine klinische Diagnose oder medizinisch-therapeutische Behandlung.</p></details>
+      <details class="faq"><summary><span>Wie funktioniert die Bezahlung mit Klarna?</span><svg><use href="#i-chev"/></svg></summary>
+        <p>Über unseren sicheren Partner Hotmart kannst du in Deutschland, Österreich und der Schweiz bequem mit Klarna Rechnung (erst erhalten, später bezahlen) oder Klarna Sofortüberweisung sowie PayPal und Kreditkarte bezahlen.</p></details>
+      <details class="faq"><summary><span>Wie greift die 7-Tage-Garantie?</span><svg><use href="#i-chev"/></svg></summary>
+        <p>Ganz unkompliziert: Wenn du innerhalb von 7 Tagen ab Kaufdatum feststellst, dass das Buch nicht deinen Erwartungen entspricht, sende einfach eine E-Mail an unseren Kundensupport und du erhältst unverzüglich dein Geld zurück.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 13. Abschluss-CTA & Footer -->
+<section class="bg-brand text-white py-12 sm:py-14 lg:py-24 px-4 text-center">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-white">Bist du bereit, deine unbewussten Muster ein für alle Mal aufzulösen?</h2>
+    <p class="sub sub--dark">Dein zukünftiges Selbst wartet nicht darauf, dass die Umstände perfekt werden. Beginne heute mit der wichtigsten Reise deines Lebens.</p>
+    <div class="mt-8"><a href="#kaufbereich" class="btn"><span class="sm:hidden">Jetzt sichern · 19,90&nbsp;€</span><span class="hidden sm:inline">Jetzt für nur 19,90&nbsp;€ sichern</span></a></div>
+  </div>
+</section>
+<footer class="bg-brand-dark text-white py-12 px-4 text-center">
+  <div class="max-w-4xl mx-auto space-y-3">
+    <p class="font-display font-bold uppercase tracking-wide text-sm">Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch</p>
+    <p class="text-sm text-white/85">© 2026 Alle Rechte vorbehalten. Das ultimative Schattenarbeit &amp; Inneres Kind Arbeitsbuch.</p>
+    <p class="text-sm legal">
+          <a href="#" class="legal__a hover:underline">Impressum</a>
+          <a href="#" class="legal__a hover:underline">Datenschutzerklärung</a>
+          <a href="#" class="legal__a hover:underline">AGB</a>
+          <a href="#" class="legal__a hover:underline">Widerrufsbelehrung (7 Tage)</a>
+        </p>
+    <p class="text-xs text-white/70 max-w-xl mx-auto">Haftungsausschluss: Die Inhalte dieses Arbeitsbuches dienen ausschließlich der persönlichen Reflexion und Bildung. Sie stellen keine medizinische oder psychotherapeutische Beratung dar.</p>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<dialog id="lightbox" class="lightbox" aria-label="Vergrößerte Beispielseite">
+  <button type="button" class="lightbox__close" aria-label="Schließen">×</button>
+  <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Vergrößerte Beispielseite">
+  <p id="lightbox-cap" class="lightbox__cap"></p>
+</dialog>
+<script>
+(function(){var d=document.getElementById('lightbox');if(!d||!d.showModal)return;var im=document.getElementById('lightbox-img'),cp=document.getElementById('lightbox-cap');
+document.querySelectorAll('.g-item').forEach(function(b){b.addEventListener('click',function(){im.src=b.getAttribute('data-full');var c=b.getAttribute('data-caption');im.alt='Vergrößerte '+c;cp.textContent=c;d.showModal();});});
+d.addEventListener('click',function(e){if(e.target===d||e.target.classList.contains('lightbox__close'))d.close();});})();
+</script>

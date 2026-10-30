@@ -1,0 +1,35 @@
+<script>
+  (function() {
+    function passUtmsToCheckout() {
+      var currentSearch = window.location.search;
+      if (!currentSearch) return;
+      var currentParams = new URLSearchParams(currentSearch);
+      
+      var links = document.querySelectorAll('a[href*="hotmart.com"], a[href*="pay."], [data-utmify-checkout="true"]');
+      links.forEach(function(link) {
+        try {
+          var href = link.getAttribute('href');
+          if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
+          var url = new URL(href, window.location.origin);
+          currentParams.forEach(function(val, key) {
+            url.searchParams.set(key, val);
+          });
+          link.setAttribute('href', url.toString());
+          link.setAttribute('target', '_self');
+        } catch(e) {}
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', passUtmsToCheckout);
+    } else {
+      passUtmsToCheckout();
+    }
+    window.addEventListener('load', passUtmsToCheckout);
+    document.addEventListener('click', function(e) {
+      var target = e.target.closest('a[href*="hotmart.com"], a[href*="pay."], [data-utmify-checkout="true"]');
+      if (target) {
+        passUtmsToCheckout();
+      }
+    });
+  })();
+  </script>
