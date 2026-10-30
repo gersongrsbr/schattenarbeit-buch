@@ -97,3 +97,128 @@
   border: 2px solid #00922D;
   box-shadow: 0 8px 24px rgba(0, 146, 45, 0.12);
 }
+
+
+/* --- DEDICATED ATLAS MOBILE POLISH (DAVID MOBILE REVIEW) --- */
+.flex-col { flex-direction: column !important; }
+.flex-row { flex-direction: row !important; }
+.items-start { align-items: flex-start !important; }
+.items-center { align-items: center !important; }
+.justify-between { justify-content: space-between !important; }
+.justify-center { justify-content: center !important; }
+.w-full { width: 100% !important; }
+.box-border { box-sizing: border-box !important; }
+.rounded-xl { border-radius: 0.75rem !important; }
+.rounded-2xl { border-radius: 1rem !important; }
+.rounded-3xl { border-radius: 1.5rem !important; }
+
+/* Quote Section */
+.jung-quote-card {
+  background: rgba(0, 26, 16, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 1.75rem 1.15rem;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+@media (min-width: 640px) {
+  .jung-quote-card {
+    border-radius: 28px;
+    padding: 3rem 2.5rem;
+  }
+}
+.jung-cta-wrap {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .jung-cta-wrap {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* Comparison Calculator */
+.comparison-container {
+  margin-top: 1.75rem;
+  background: rgba(242, 247, 245, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+@media (min-width: 640px) {
+  .comparison-container {
+    padding: 2rem;
+    border-radius: 28px;
+  }
+}
+.compare-box--old {
+  background: #ffffff;
+  border: 1px solid rgba(220, 38, 38, 0.35);
+  border-radius: 16px;
+  padding: 1.25rem 1rem !important;
+  box-sizing: border-box;
+}
+.compare-box--new {
+  background: #ffffff;
+  border: 2px solid #00922D;
+  border-radius: 16px;
+  padding: 1.25rem 1rem !important;
+  box-sizing: border-box;
+  box-shadow: 0 6px 20px rgba(0, 146, 45, 0.12);
+}
+.compare-banner {
+  margin-top: 1.25rem;
+  background: var(--brand);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .compare-banner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 1.5rem 2rem;
+  }
+}
+.compare-banner h4 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  color: #ffffff;
+  margin: 0;
+}
+@media (min-width: 640px) {
+  .compare-banner h4 {
+    font-size: 1.35rem;
+  }
+}
+.compare-banner .btn {
+  width: 100% !important;
+  max-width: 320px !important;
+  box-sizing: border-box !important;
+}
+@media (min-width: 640px) {
+  .compare-banner .btn {
+    width: auto !important;
+  }
+}
