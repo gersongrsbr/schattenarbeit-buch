@@ -184,7 +184,7 @@
     <div class="marquee-track animate-marquee-left flex items-center text-xs sm:text-sm font-display uppercase tracking-wider">
       <div class="flex items-center space-x-8 px-6 whitespace-nowrap">
         <span><span class="text-cta mr-1.5 font-bold">⚡</span> Sofortige digitale Bereitstellung per E-Mail</span>
-        <span><span class="text-cta mr-1.5 font-bold">🛡️</span> 100% risikofrei mit 7-Tage-Geld-zurück-Garantie</span>
+        <span><span class="text-cta mr-1.5 font-bold">🛡️</span> 100% risikofrei mit 7 Tage Geld-zurück-Garantie – Ohne Wenn und Aber</span>
         <span><span class="text-cta mr-1.5 font-bold">♾️</span> Lebenslanger Zugriff ohne Abo-Kosten</span>
         <span><span class="text-cta mr-1.5 font-bold">📱</span> Optimiert für GoodNotes, Notability & druckbar</span>
         <span><span class="text-gold mr-1.5 font-bold">⭐</span> 4.9/5 Bewertung von 4.800+ Lesern im DACH-Raum</span>
@@ -192,7 +192,7 @@
       <!-- Duplicado idéntico para loop continuo sin saltos -->
       <div class="flex items-center space-x-8 px-6 whitespace-nowrap">
         <span><span class="text-cta mr-1.5 font-bold">⚡</span> Sofortige digitale Bereitstellung per E-Mail</span>
-        <span><span class="text-cta mr-1.5 font-bold">🛡️</span> 100% risikofrei mit 7-Tage-Geld-zurück-Garantie</span>
+        <span><span class="text-cta mr-1.5 font-bold">🛡️</span> 100% risikofrei mit 7 Tage Geld-zurück-Garantie – Ohne Wenn und Aber</span>
         <span><span class="text-cta mr-1.5 font-bold">♾️</span> Lebenslanger Zugriff ohne Abo-Kosten</span>
         <span><span class="text-cta mr-1.5 font-bold">📱</span> Optimiert für GoodNotes, Notability & druckbar</span>
         <span><span class="text-gold mr-1.5 font-bold">⭐</span> 4.9/5 Bewertung von 4.800+ Lesern im DACH-Raum</span>
@@ -840,14 +840,63 @@
         </p>
       </div>
 
-      <!-- Bloque 1: WhatsApp Screenshot mit echtem Foto -->
-      <div class="max-w-xl mx-auto mb-14">
-        <div class="rounded-2xl overflow-hidden shadow-card border border-line bg-sand p-2">
-          <img src="img/whatsapp-testimonial-photo.webp" alt="Verifizierte WhatsApp-Rückmeldung mit Foto" class="w-full h-auto rounded-xl block mx-auto" loading="lazy">
+      <!-- Bloque 1: WhatsApp Testimonials Karussell mit echten Fotos -->
+      <div class="max-w-md mx-auto mb-14 relative select-none" id="whatsapp-carousel-container">
+        
+        <!-- Header / Zähler -->
+        <div class="flex items-center justify-between mb-3 px-1">
+          <span class="text-[11px] font-bold text-cta uppercase tracking-wider bg-cta/10 px-2.5 py-1 rounded-full flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-cta animate-pulse"></span>
+            Echte WhatsApp-Nachrichten
+          </span>
+          <span class="text-xs font-bold text-muted-fg font-display" id="wa-counter">1 / 3</span>
         </div>
-        <p class="text-center text-[11px] text-muted-fg mt-2 font-medium">
-          Verifizierter WhatsApp-Chat von Anna K. (München) mit Foto ihrer abendlichen Routine
+
+        <!-- Karussell Viewport -->
+        <div class="relative rounded-2xl overflow-hidden shadow-card border border-line bg-sand p-2">
+          
+          <!-- Track mit Slides -->
+          <div id="wa-track" class="flex transition-transform duration-300 ease-out" style="transform: translateX(0%);">
+            
+            <!-- Slide 1 -->
+            <div class="w-full flex-shrink-0">
+              <img src="img/whatsapp-testimonial-01.webp" alt="WhatsApp Erfahrung Anna K. (München)" class="w-full h-auto rounded-xl block mx-auto shadow-sm" loading="lazy">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="w-full flex-shrink-0">
+              <img src="img/whatsapp-testimonial-02.webp" alt="WhatsApp Erfahrung Michael S. (Zürich)" class="w-full h-auto rounded-xl block mx-auto shadow-sm" loading="lazy">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="w-full flex-shrink-0">
+              <img src="img/whatsapp-testimonial-03.webp" alt="WhatsApp Erfahrung Laura B. (Wien)" class="w-full h-auto rounded-xl block mx-auto shadow-sm" loading="lazy">
+            </div>
+
+          </div>
+
+          <!-- Navigations-Pfeile (Links / Rechts) -->
+          <button type="button" id="wa-prev" aria-label="Vorherige Nachricht" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 text-brand shadow-lg border border-line flex items-center justify-center font-bold text-lg hover:bg-brand hover:text-white transition active:scale-95 z-20 cursor-pointer">
+            ‹
+          </button>
+          <button type="button" id="wa-next" aria-label="Nächste Nachricht" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 text-brand shadow-lg border border-line flex items-center justify-center font-bold text-lg hover:bg-brand hover:text-white transition active:scale-95 z-20 cursor-pointer">
+            ›
+          </button>
+
+        </div>
+
+        <!-- Dynamische Beschreibung der Nachricht -->
+        <p class="text-center text-[11px] text-muted-fg mt-3 font-medium min-h-[32px] px-2" id="wa-caption">
+          Verifizierter WhatsApp-Chat von Anna K. (München) • Tägliche Routine auf dem Sofa
         </p>
+
+        <!-- Indikator-Punkte -->
+        <div class="flex items-center justify-center gap-2 mt-2" id="wa-dots">
+          <button type="button" class="wa-dot w-6 h-2 rounded-full bg-cta transition-all" data-index="0" aria-label="Nachricht 1"></button>
+          <button type="button" class="wa-dot w-2 h-2 rounded-full bg-line hover:bg-muted-fg transition-all" data-index="1" aria-label="Nachricht 2"></button>
+          <button type="button" class="wa-dot w-2 h-2 rounded-full bg-line hover:bg-muted-fg transition-all" data-index="2" aria-label="Nachricht 3"></button>
+        </div>
+
       </div>
 
       <!-- Bloque 2: Reviews estilo Amazon con Fotos Reales de Perfil -->
@@ -972,6 +1021,19 @@
                   height="1024"
                   loading="lazy"
                 >
+              <!-- Technische Spezifikationen (Gründlichkeit & System nach DACH-Standard) -->
+              <div class="mt-4 bg-sand/60 border border-line rounded-xl p-4 text-xs space-y-2">
+                <div class="font-display font-extrabold text-[11px] uppercase tracking-wider text-brand flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-cta"></span>
+                  Technische Spezifikationen (DIN-Norm)
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-[11px] text-muted-fg">
+                  <div><strong class="text-fg block">Seitenumfang:</strong> Exakt 130 Seiten DIN A4</div>
+                  <div><strong class="text-fg block">Auflösung:</strong> Vektor-PDF (300 DPI)</div>
+                  <div><strong class="text-fg block">Bereitstellung:</strong> Sofortiger Download</div>
+                  <div><strong class="text-fg block">Geräte:</strong> iPad, Tablet, PC & Druck</div>
+                </div>
+              </div>
               </div>
             </div>
 
@@ -1032,7 +1094,7 @@
                 </a>
 
                 <div class="flex items-center justify-center gap-2 text-[11px] text-muted-fg mt-3 font-medium">
-                  <span class="text-cta font-bold">🛡️</span> 100% risikofrei mit 7-Tage-Geld-zurück-Garantie
+                  <span class="text-cta font-bold">🛡️</span> 100% risikofrei mit 7 Tage Geld-zurück-Garantie – Ohne Wenn und Aber
                 </div>
               </div>
 
@@ -1270,7 +1332,7 @@
 
           <details class="bg-white rounded-xl border border-line p-4 shadow-soft group">
             <summary class="font-display font-bold text-xs sm:text-sm text-brand cursor-pointer list-none flex items-center justify-between">
-              <span>Wie funktioniert die 7-Tage Geld-zurück-Garantie?</span>
+              <span>Wie funktioniert die 7 Tage Geld-zurück-Garantie – Ohne Wenn und Aber?</span>
               <span class="text-cta font-bold text-base transition-transform group-open:rotate-180">▾</span>
             </summary>
             <p class="text-xs text-muted-fg leading-relaxed mt-2 pt-2 border-t border-line">
@@ -1315,26 +1377,126 @@
   <!-- ==========================================
        SECCIÓN 17: FOOTER INSTITUCIONAL (BRAND-DARK)
        ========================================== -->
-  <footer class="bg-brand-dark text-white py-12 px-4 border-t border-white/10 text-center">
-    <div class="max-w-4xl mx-auto text-xs text-white/70 space-y-4">
+  <footer class="bg-brand-dark text-white py-14 px-4 border-t border-white/10 text-center">
+    <div class="max-w-4xl mx-auto text-xs text-white/70 space-y-6">
+      
+      <!-- DACH Trust Badges -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pb-6 border-b border-white/10 text-center">
+        <div class="flex items-center justify-center gap-2 text-white/90 font-medium">
+          <span class="text-cta text-base">🔒</span>
+          <span>SSL 256-Bit Verschlüsselung</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-white/90 font-medium">
+          <span class="text-cta text-base">🛡️</span>
+          <span>100% Sicher über Hotmart & Klarna</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-white/90 font-medium">
+          <span class="text-cta text-base">🇩🇪</span>
+          <span>Deutscher E-Mail Support (24h)</span>
+        </div>
+      </div>
+
       <div class="font-display font-bold text-sm text-white uppercase tracking-wider">
         Das ultimative Schattenarbeit & Inneres Kind Arbeitsbuch
       </div>
+      
       <p class="max-w-2xl mx-auto text-[11px] leading-relaxed text-white/60">
         Rechtlicher Hinweis: Dieses Arbeitsbuch dient der Selbsterfahrung und persönlichen Weiterentwicklung. Es ersetzt keine klinische Psychotherapie, medizinische Diagnose oder fachärztliche Behandlung.
       </p>
-      <div class="flex flex-wrap justify-center gap-4 text-xs font-medium text-white/80 pt-2">
+
+      <!-- Pflichtangaben & Rechtliche Links nach TMG / DSGVO -->
+      <div class="flex flex-wrap justify-center gap-4 text-xs font-semibold text-white/90 pt-2">
         <a href="#kaufbereich" class="hover:text-cta transition-colors">Startseite</a>
         <a href="#kaufbereich" class="hover:text-cta transition-colors">Bestellen</a>
         <a href="#garantie" class="hover:text-cta transition-colors">7 Tage Garantie</a>
         <a href="#faq" class="hover:text-cta transition-colors">FAQ</a>
-        <a href="mailto:support@schattenarbeit-buch.pages.dev" class="hover:text-cta transition-colors">Kontakt</a>
+        <button type="button" onclick="openLegalModal('impressum')" class="hover:text-cta transition-colors underline cursor-pointer">Impressum</button>
+        <button type="button" onclick="openLegalModal('datenschutz')" class="hover:text-cta transition-colors underline cursor-pointer">Datenschutzerklärung</button>
+        <button type="button" onclick="openLegalModal('agb')" class="hover:text-cta transition-colors underline cursor-pointer">AGB</button>
+        <a href="mailto:support@schattenarbeit-buch.pages.dev" class="hover:text-cta transition-colors">Support</a>
       </div>
-      <div class="text-[10px] text-white/40 pt-4 border-t border-white/10">
-        © 2026 Alle Rechte vorbehalten. Sichere Abwicklung durch Hotmart B.V.
+
+      <div class="text-[10px] text-white/40 pt-4 border-t border-white/10 space-y-1">
+        <div>© 2026 Alle Rechte vorbehalten. Autorisierter Vertrieb und Zahlungsabwicklung durch Hotmart B.V.</div>
+        <div>Verkauf im gesamten DACH-Raum (Deutschland, Österreich, Schweiz) nach EU-Verbraucherrichtlinien.</div>
       </div>
+
     </div>
   </footer>
+
+  <!-- DACH Legal Modals (Impressum, Datenschutz, AGB) -->
+  <div id="legal-modal-backdrop" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white text-fg rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 shadow-card relative border border-line">
+      
+      <button type="button" onclick="closeLegalModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-sand text-brand font-bold flex items-center justify-center hover:bg-brand hover:text-white transition">
+        ✕
+      </button>
+
+      <!-- Content: Impressum -->
+      <div id="modal-content-impressum" class="space-y-4 text-xs leading-relaxed text-muted-fg hidden">
+        <h3 class="font-display font-extrabold text-lg text-brand uppercase">Impressum</h3>
+        <p class="font-bold text-fg">Angaben gemäß § 5 TMG / Verantwortlich für den Inhalt:</p>
+        <p>
+          <strong>Projekt:</strong> Das ultimative Schattenarbeit & Inneres Kind Arbeitsbuch<br>
+          <strong>Herausgeber:</strong> Dr. Johanna Bergmann & Autoren-Kollektiv<br>
+          <strong>Technischer Vertrieb & Zahlungsabwicklung:</strong> Hotmart B.V., Singel 250, 1016 AB Amsterdam, Niederlande<br>
+          <strong>Kontakt Support:</strong> support@schattenarbeit-buch.pages.dev<br>
+          <strong>Reaktionszeit:</strong> In der Regel innerhalb von wenigen Stunden (Montag bis Sonntag)
+        </p>
+        <h4 class="font-display font-bold text-sm text-fg mt-4">Haftung für Inhalte und Links</h4>
+        <p>
+          Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+        </p>
+        <h4 class="font-display font-bold text-sm text-fg mt-4">EU-Streitschlichtung</h4>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </div>
+
+      <!-- Content: Datenschutz -->
+      <div id="modal-content-datenschutz" class="space-y-4 text-xs leading-relaxed text-muted-fg hidden">
+        <h3 class="font-display font-extrabold text-lg text-brand uppercase">Datenschutzerklärung (DSGVO)</h3>
+        <p class="font-bold text-fg">1. Datenschutz auf einen Blick</p>
+        <p>
+          Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften (DSGVO) sowie dieser Datenschutzerklärung.
+        </p>
+        <p class="font-bold text-fg">2. Datenerfassung auf unserer Website</p>
+        <p>
+          Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Beim Besuch der Website werden technisch notwendige Daten (z. B. IP-Adresse, Browser, Betriebssystem) zur Bereitstellung der Inhalte erhoben.
+        </p>
+        <p class="font-bold text-fg">3. Bestellabwicklung über Hotmart</p>
+        <p>
+          Für die sichere Abwicklung der Bestellungen und Zahlungen (Klarna, PayPal, Kreditkarte) nutzen wir die Plattform von Hotmart B.V. Alle Zahlungsinformationen werden verschlüsselt (256-Bit SSL) direkt an Hotmart übertragen. Wir speichern keine Kreditkarten- oder Bankdaten auf unseren Servern.
+        </p>
+        <p class="font-bold text-fg">4. Ihre Rechte nach DSGVO</p>
+        <p>
+          Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Kontaktieren Sie hierzu unseren Support: support@schattenarbeit-buch.pages.dev.
+        </p>
+      </div>
+
+      <!-- Content: AGB -->
+      <div id="modal-content-agb" class="space-y-4 text-xs leading-relaxed text-muted-fg hidden">
+        <h3 class="font-display font-extrabold text-lg text-brand uppercase">Allgemeine Geschäftsbedingungen (AGB)</h3>
+        <p class="font-bold text-fg">§ 1 Geltungsbereich & Vertragspartner</p>
+        <p>
+          Diese Allgemeinen Geschäftsbedingungen gelten für alle Bestellungen von digitalen Produkten (E-Books, Arbeitsbücher im PDF-Format, Audio-Dateien) über diese Website. Vertragspartner für die Zahlungsabwicklung ist Hotmart B.V.
+        </p>
+        <p class="font-bold text-fg">§ 2 Bereitstellung digitaler Inhalte</p>
+        <p>
+          Nach erfolgreicher Zahlung erhält der Käufer unverzüglich per E-Mail einen Download-Link zu den erworbenen Dateien im PDF-Format. Ein physischer Versand findet nicht statt.
+        </p>
+        <p class="font-bold text-fg">§ 3 Strikte 7-Tage Geld-zurück-Garantie (Ohne Wenn und Aber)</p>
+        <p>
+          Wir gewähren auf das Arbeitsbuch eine vertragliche 7-Tage-Zufriedenheitsgarantie. Sollten Sie innerhalb von 7 Tagen nach dem Kauf nicht vollständig zufrieden sein, genügt eine formlose E-Mail an support@schattenarbeit-buch.pages.dev oder an Hotmart. Der Kaufpreis von 19,90 € wird ohne Rückfragen zu 100% erstattet.
+        </p>
+        <p class="font-bold text-fg">§ 4 Urheberrecht</p>
+        <p>
+          Die bereitgestellten Inhalte und Dateien sind urheberrechtlich geschützt. Der Käufer erhält ein einfaches, nicht übertragbares Nutzungsrecht für den persönlichen Gebrauch. Eine Weitergabe an Dritte oder Veröffentlichung ist untersagt.
+        </p>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ==========================================
        COMPONENTES FLOTANTES DINÁMICOS
@@ -1374,6 +1536,72 @@
        JAVASCRIPT: COMPONENTES DINÁMICOS & UTM PASSTHROUGH
        ========================================== -->
   <script>
+    // 0. WhatsApp Testimonials Karussell
+    (function initWhatsAppCarousel() {
+      const track = document.getElementById('wa-track');
+      const prevBtn = document.getElementById('wa-prev');
+      const nextBtn = document.getElementById('wa-next');
+      const counter = document.getElementById('wa-counter');
+      const caption = document.getElementById('wa-caption');
+      const dots = document.querySelectorAll('.wa-dot');
+      
+      if (!track || !prevBtn || !nextBtn) return;
+
+      const captions = [
+        "Verifizierter WhatsApp-Chat von Anna K. (München) • Tägliche Routine auf dem Sofa",
+        "Verifizierter WhatsApp-Chat von Michael S. (Zürich) • Modul 4 (Somatische Erdung) auf iPad Pro",
+        "Verifizierter WhatsApp-Chat von Laura B. (Wien) • Ausgedruckter Projektions-Spiegel im Ordner"
+      ];
+
+      let currentIndex = 0;
+      const totalSlides = 3;
+
+      function updateCarousel(index) {
+        currentIndex = (index + totalSlides) % totalSlides;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        if (counter) counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+        if (caption) caption.textContent = captions[currentIndex];
+
+        dots.forEach((dot, idx) => {
+          if (idx === currentIndex) {
+            dot.className = "wa-dot w-6 h-2 rounded-full bg-cta transition-all";
+          } else {
+            dot.className = "wa-dot w-2 h-2 rounded-full bg-line hover:bg-muted-fg transition-all";
+          }
+        });
+      }
+
+      prevBtn.addEventListener('click', () => updateCarousel(currentIndex - 1));
+      nextBtn.addEventListener('click', () => updateCarousel(currentIndex + 1));
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+          const idx = parseInt(e.currentTarget.getAttribute('data-index'), 10);
+          updateCarousel(idx);
+        });
+      });
+
+      // Swipe auf Touch-Geräten
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) {
+            updateCarousel(currentIndex + 1);
+          } else {
+            updateCarousel(currentIndex - 1);
+          }
+        }
+      }, { passive: true });
+    })();
+
     // 1. Sticky Bottom Bar Trigger (Scroll > 400px)
     const stickyBar = document.getElementById('sticky-bottom-bar');
     window.addEventListener('scroll', () => {
