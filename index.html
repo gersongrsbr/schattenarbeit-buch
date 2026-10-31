@@ -20,47 +20,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              DEFAULT: '#002718', // Verde bosque oscuro Atlas
-              dark: '#00160B',    // Footer oscuro
-              light: '#0A3D27',
-              accent: '#0ba34a',
-            },
-            sand: {
-              DEFAULT: '#F2F7F5', // Superficie clara alternativa
-              deep: '#DFEBE6',
-            },
-            cta: {
-              DEFAULT: '#00922D', // Verde éxito saturado para compra
-              hover: '#007B20',
-            },
-            gold: '#E8AB3E',
-            fg: '#141414',
-            'muted-fg': '#4B5953',
-            line: '#D8E0DD',
-          },
-          fontFamily: {
-            display: ['Montserrat', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'],
-          },
-          boxShadow: {
-            soft: '0 4px 20px -6px rgba(99, 42, 11, 0.14)',
-            card: '0 10px 34px -14px rgba(99, 42, 11, 0.22)',
-            cta: '0 14px 26px -10px rgba(0, 146, 45, 0.50), 0 6px 14px -6px rgba(0, 146, 45, 0.40)',
-          }
-        }
-      }
-    }
-  </script>
+  <!-- DNS Prefetch & Preconnect for Hotmart Checkout & Fonts (Instant Connect Rate) -->
+  <link rel="dns-prefetch" href="https://pay.hotmart.com">
+  <link rel="preconnect" href="https://pay.hotmart.com" crossorigin>
+  <link rel="dns-prefetch" href="https://static.hotmart.com">
+  <link rel="preconnect" href="https://static.hotmart.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload Critical Hero Mockup Image (LCP Optimization) -->
+  <link rel="preload" as="image" href="img/mockup-hero-abundant.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Production Minified Compiled Tailwind CSS (0ms runtime parsing overhead) -->
+  <link rel="stylesheet" href="css/style.min.css">
 
   <style>
+    /* Brandbook Atlas Canonical Tokens */
+    :root {
+      --color-brand: #002718;
+      --color-cta: #00922D;
+      --color-sand: #F2F7F5;
+    }
+
     /* Reset & Base */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -242,12 +224,14 @@
           <picture>
             <source srcset="img/mockup-hero.webp" type="image/webp">
             <img 
-              src="img/mockup-hero-abundant.jpg" 
+              src="img/mockup-hero-abundant.webp" 
               alt="Das ultimative Schattenarbeit Arbeitsbuch Bundle nach C.G. Jung" 
               class="w-full h-auto object-cover block mx-auto max-h-[520px]"
               width="1200" 
               height="896" 
               fetchpriority="high"
+              loading="eager"
+              decoding="async"
             >
           </picture>
         </div>
@@ -293,13 +277,13 @@
           <!-- Card Acción 1 -->
           <div class="bg-white rounded-xl border border-line p-4 shadow-soft flex flex-col justify-between">
             <div class="rounded-lg overflow-hidden mb-3 aspect-square bg-sand">
-              <img src="img/action-01-schreiben.webp" alt="Schreibroutine am Schreibtisch" class="w-full h-full object-cover" loading="lazy">
+              <img src="img/action-01-schreiben.webp" alt="Schreibroutine am Schreibtisch" class="w-full h-full object-cover" loading="lazy" decoding="async">
             </div>
             <p class="text-xs text-fg italic leading-relaxed mb-3">
               „Die somatische Übung auf Seite 60 hat meine jahrelange innere Anspannung am Schreibtisch in Minuten gelöst.“
             </p>
             <div class="flex items-center gap-2 pt-2 border-t border-line">
-              <img src="img/avatar-01.jpg" alt="Dr. Katharina M." class="w-8 h-8 rounded-full object-cover">
+              <img src="img/avatar-01.jpg" alt="Dr. Katharina M." class="w-8 h-8 rounded-full object-cover" decoding="async">
               <div>
                 <div class="text-xs font-display font-bold text-brand">Dr. Katharina M., 38</div>
                 <div class="text-[10px] text-cta font-semibold">✓ Verifizierter Kauf (München)</div>
@@ -310,13 +294,13 @@
           <!-- Card Acción 2 -->
           <div class="bg-white rounded-xl border border-line p-4 shadow-soft flex flex-col justify-between">
             <div class="rounded-lg overflow-hidden mb-3 aspect-square bg-sand">
-              <img src="img/action-02-spiegel.webp" alt="Spiegelreflexion Schattenarbeit" class="w-full h-full object-cover" loading="lazy">
+              <img src="img/action-02-spiegel.webp" alt="Spiegelreflexion Schattenarbeit" class="w-full h-full object-cover" loading="lazy" decoding="async">
             </div>
             <p class="text-xs text-fg italic leading-relaxed mb-3">
               „Der Projektions-Spiegel nach C.G. Jung: Endlich verstehe ich, warum mich Kleinigkeiten im Streit so getriggert haben.“
             </p>
             <div class="flex items-center gap-2 pt-2 border-t border-line">
-              <img src="img/avatar-02.jpg" alt="Markus T." class="w-8 h-8 rounded-full object-cover">
+              <img src="img/avatar-02.jpg" alt="Markus T." class="w-8 h-8 rounded-full object-cover" decoding="async">
               <div>
                 <div class="text-xs font-display font-bold text-brand">Markus T., 42</div>
                 <div class="text-[10px] text-cta font-semibold">✓ Verifizierter Kauf (Wien)</div>
@@ -327,13 +311,13 @@
           <!-- Card Acción 3 -->
           <div class="bg-white rounded-xl border border-line p-4 shadow-soft flex flex-col justify-between">
             <div class="rounded-lg overflow-hidden mb-3 aspect-square bg-sand">
-              <img src="img/action-03-somatisch.webp" alt="Somatische Beruhigung" class="w-full h-full object-cover" loading="lazy">
+              <img src="img/action-03-somatisch.webp" alt="Somatische Beruhigung" class="w-full h-full object-cover" loading="lazy" decoding="async">
             </div>
             <p class="text-xs text-fg italic leading-relaxed mb-3">
               „3-Minuten Vagusnerv-Regulation bei Panik & Leistungsdruck. Meine beste Investition für echten Seelenfrieden.“
             </p>
             <div class="flex items-center gap-2 pt-2 border-t border-line">
-              <img src="img/avatar-03.jpg" alt="Julia S." class="w-8 h-8 rounded-full object-cover">
+              <img src="img/avatar-03.jpg" alt="Julia S." class="w-8 h-8 rounded-full object-cover" decoding="async">
               <div>
                 <div class="text-xs font-display font-bold text-brand">Julia S., 29</div>
                 <div class="text-[10px] text-cta font-semibold">✓ Verifizierter Kauf (Zürich)</div>
@@ -344,13 +328,13 @@
           <!-- Card Acción 4 -->
           <div class="bg-white rounded-xl border border-line p-4 shadow-soft flex flex-col justify-between">
             <div class="rounded-lg overflow-hidden mb-3 aspect-square bg-sand">
-              <img src="img/action-04-routine.webp" alt="Inneres Kind Routine" class="w-full h-full object-cover" loading="lazy">
+              <img src="img/action-04-routine.webp" alt="Inneres Kind Routine" class="w-full h-full object-cover" loading="lazy" decoding="async">
             </div>
             <p class="text-xs text-fg italic leading-relaxed mb-3">
               „Re-Parenting & Versöhnung mit dem Schattenkind. 130 Seiten geballte Psychologie, sofort anwendbar.“
             </p>
             <div class="flex items-center gap-2 pt-2 border-t border-line">
-              <img src="img/avatar-04.jpg" alt="Stefan B." class="w-8 h-8 rounded-full object-cover">
+              <img src="img/avatar-04.jpg" alt="Stefan B." class="w-8 h-8 rounded-full object-cover" decoding="async">
               <div>
                 <div class="text-xs font-display font-bold text-brand">Stefan B., 35</div>
                 <div class="text-[10px] text-cta font-semibold">✓ Verifizierter Kauf (Hamburg)</div>
@@ -378,57 +362,57 @@
 
       <!-- Fila 1 (Izquierda) -->
       <div class="marquee-track animate-marquee-left flex gap-4 mb-4 select-none">
-        <img src="img/interior-01.webp" alt="Schattenarbeit Seite 1" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-02.webp" alt="Schattenarbeit Seite 2" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-03.webp" alt="Schattenarbeit Seite 3" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-04.webp" alt="Schattenarbeit Seite 4" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-05.webp" alt="Schattenarbeit Seite 5" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-06.webp" alt="Schattenarbeit Seite 6" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-07.webp" alt="Schattenarbeit Seite 7" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
+        <img src="img/interior-01.webp" alt="Schattenarbeit Seite 1" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-02.webp" alt="Schattenarbeit Seite 2" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-03.webp" alt="Schattenarbeit Seite 3" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-04.webp" alt="Schattenarbeit Seite 4" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-05.webp" alt="Schattenarbeit Seite 5" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-06.webp" alt="Schattenarbeit Seite 6" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-07.webp" alt="Schattenarbeit Seite 7" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
         <!-- Duplicate Fila 1 -->
-        <img src="img/interior-01.webp" alt="Schattenarbeit Seite 1" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-02.webp" alt="Schattenarbeit Seite 2" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-03.webp" alt="Schattenarbeit Seite 3" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-04.webp" alt="Schattenarbeit Seite 4" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-05.webp" alt="Schattenarbeit Seite 5" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-06.webp" alt="Schattenarbeit Seite 6" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-07.webp" alt="Schattenarbeit Seite 7" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
+        <img src="img/interior-01.webp" alt="Schattenarbeit Seite 1" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-02.webp" alt="Schattenarbeit Seite 2" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-03.webp" alt="Schattenarbeit Seite 3" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-04.webp" alt="Schattenarbeit Seite 4" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-05.webp" alt="Schattenarbeit Seite 5" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-06.webp" alt="Schattenarbeit Seite 6" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-07.webp" alt="Schattenarbeit Seite 7" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
       </div>
 
       <!-- Fila 2 (Derecha) -->
       <div class="marquee-track animate-marquee-right flex gap-4 mb-4 select-none">
-        <img src="img/interior-08.webp" alt="Schattenarbeit Seite 8" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-09.webp" alt="Schattenarbeit Seite 9" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-10.webp" alt="Schattenarbeit Seite 10" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-11.webp" alt="Schattenarbeit Seite 11" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-12.webp" alt="Schattenarbeit Seite 12" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-13.webp" alt="Schattenarbeit Seite 13" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-14.webp" alt="Schattenarbeit Seite 14" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
+        <img src="img/interior-08.webp" alt="Schattenarbeit Seite 8" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-09.webp" alt="Schattenarbeit Seite 9" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-10.webp" alt="Schattenarbeit Seite 10" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-11.webp" alt="Schattenarbeit Seite 11" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-12.webp" alt="Schattenarbeit Seite 12" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-13.webp" alt="Schattenarbeit Seite 13" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-14.webp" alt="Schattenarbeit Seite 14" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
         <!-- Duplicate Fila 2 -->
-        <img src="img/interior-08.webp" alt="Schattenarbeit Seite 8" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-09.webp" alt="Schattenarbeit Seite 9" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-10.webp" alt="Schattenarbeit Seite 10" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-11.webp" alt="Schattenarbeit Seite 11" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-12.webp" alt="Schattenarbeit Seite 12" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-13.webp" alt="Schattenarbeit Seite 13" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-14.webp" alt="Schattenarbeit Seite 14" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
+        <img src="img/interior-08.webp" alt="Schattenarbeit Seite 8" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-09.webp" alt="Schattenarbeit Seite 9" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-10.webp" alt="Schattenarbeit Seite 10" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-11.webp" alt="Schattenarbeit Seite 11" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-12.webp" alt="Schattenarbeit Seite 12" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-13.webp" alt="Schattenarbeit Seite 13" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-14.webp" alt="Schattenarbeit Seite 14" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
       </div>
 
       <!-- Fila 3 (Izquierda) -->
       <div class="marquee-track animate-marquee-fast flex gap-4 select-none">
-        <img src="img/interior-15.webp" alt="Schattenarbeit Seite 15" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-16.webp" alt="Schattenarbeit Seite 16" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-17.webp" alt="Schattenarbeit Seite 17" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-18.webp" alt="Schattenarbeit Seite 18" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-19.webp" alt="Schattenarbeit Seite 19" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-20.webp" alt="Schattenarbeit Seite 20" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
+        <img src="img/interior-15.webp" alt="Schattenarbeit Seite 15" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-16.webp" alt="Schattenarbeit Seite 16" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-17.webp" alt="Schattenarbeit Seite 17" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-18.webp" alt="Schattenarbeit Seite 18" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-19.webp" alt="Schattenarbeit Seite 19" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-20.webp" alt="Schattenarbeit Seite 20" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
         <!-- Duplicate Fila 3 -->
-        <img src="img/interior-15.webp" alt="Schattenarbeit Seite 15" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-16.webp" alt="Schattenarbeit Seite 16" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-17.webp" alt="Schattenarbeit Seite 17" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-18.webp" alt="Schattenarbeit Seite 18" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-19.webp" alt="Schattenarbeit Seite 19" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
-        <img src="img/interior-20.webp" alt="Schattenarbeit Seite 20" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white">
+        <img src="img/interior-15.webp" alt="Schattenarbeit Seite 15" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-16.webp" alt="Schattenarbeit Seite 16" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-17.webp" alt="Schattenarbeit Seite 17" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-18.webp" alt="Schattenarbeit Seite 18" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-19.webp" alt="Schattenarbeit Seite 19" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
+        <img src="img/interior-20.webp" alt="Schattenarbeit Seite 20" class="h-48 sm:h-64 rounded-lg shadow-card object-contain bg-white" decoding="async">
       </div>
 
       <div class="mt-8 text-center px-4">
@@ -745,7 +729,7 @@
           <div class="bg-white text-fg rounded-2xl p-5 shadow-card flex flex-col justify-between">
             <div>
               <div class="h-44 rounded-xl overflow-hidden mb-4 bg-sand flex items-center justify-center p-2">
-                <img src="img/mockup-bonus1.webp" alt="Bonus 1 Mockup" class="max-h-full object-contain" loading="lazy">
+                <img src="img/mockup-bonus1.webp" alt="Bonus 1 Mockup" class="max-h-full object-contain" loading="lazy" decoding="async">
               </div>
               <div class="flex items-center justify-between mb-2">
                 <span class="text-[10px] font-bold text-white bg-cta px-2.5 py-0.5 rounded-full uppercase">BONUS 1</span>
@@ -765,7 +749,7 @@
           <div class="bg-white text-fg rounded-2xl p-5 shadow-card flex flex-col justify-between">
             <div>
               <div class="h-44 rounded-xl overflow-hidden mb-4 bg-sand flex items-center justify-center p-2">
-                <img src="img/mockup-bonus2.webp" alt="Bonus 2 Mockup" class="max-h-full object-contain" loading="lazy">
+                <img src="img/mockup-bonus2.webp" alt="Bonus 2 Mockup" class="max-h-full object-contain" loading="lazy" decoding="async">
               </div>
               <div class="flex items-center justify-between mb-2">
                 <span class="text-[10px] font-bold text-white bg-cta px-2.5 py-0.5 rounded-full uppercase">BONUS 2</span>
@@ -785,7 +769,7 @@
           <div class="bg-white text-fg rounded-2xl p-5 shadow-card flex flex-col justify-between">
             <div>
               <div class="h-44 rounded-xl overflow-hidden mb-4 bg-sand flex items-center justify-center p-2">
-                <img src="img/mockup-bonus3.webp" alt="Bonus 3 Mockup" class="max-h-full object-contain" loading="lazy">
+                <img src="img/mockup-bonus3.webp" alt="Bonus 3 Mockup" class="max-h-full object-contain" loading="lazy" decoding="async">
               </div>
               <div class="flex items-center justify-between mb-2">
                 <span class="text-[10px] font-bold text-white bg-cta px-2.5 py-0.5 rounded-full uppercase">BONUS 3</span>
@@ -805,7 +789,7 @@
           <div class="bg-white text-fg rounded-2xl p-5 shadow-card flex flex-col justify-between">
             <div>
               <div class="h-44 rounded-xl overflow-hidden mb-4 bg-sand flex items-center justify-center p-2">
-                <img src="img/mockup-bonus4.webp" alt="Bonus 4 Mockup" class="max-h-full object-contain" loading="lazy">
+                <img src="img/mockup-bonus4.webp" alt="Bonus 4 Mockup" class="max-h-full object-contain" loading="lazy" decoding="async">
               </div>
               <div class="flex items-center justify-between mb-2">
                 <span class="text-[10px] font-bold text-white bg-cta px-2.5 py-0.5 rounded-full uppercase">BONUS 4</span>
@@ -860,17 +844,17 @@
             
             <!-- Slide 1 -->
             <div class="w-full flex-shrink-0">
-              <img src="img/whatsapp-testimonial-01.webp" alt="WhatsApp Erfahrung Anna K. (München)" class="w-full h-auto rounded-xl block mx-auto shadow-sm" loading="lazy">
+              <img src="img/whatsapp-testimonial-01.webp" alt="WhatsApp Erfahrung Anna K. (München)" class="w-full h-auto rounded-xl block mx-auto shadow-sm" loading="lazy" decoding="async">
             </div>
 
             <!-- Slide 2 -->
             <div class="w-full flex-shrink-0">
-              <img src="img/whatsapp-testimonial-02.webp" alt="WhatsApp Erfahrung Michael S. (Zürich)" class="w-full h-auto rounded-xl block mx-auto shadow-sm" loading="lazy">
+              <img src="img/whatsapp-testimonial-02.webp" alt="WhatsApp Erfahrung Michael S. (Zürich)" class="w-full h-auto rounded-xl block mx-auto shadow-sm" loading="lazy" decoding="async">
             </div>
 
             <!-- Slide 3 -->
             <div class="w-full flex-shrink-0">
-              <img src="img/whatsapp-testimonial-03.webp" alt="WhatsApp Erfahrung Laura B. (Wien)" class="w-full h-auto rounded-xl block mx-auto shadow-sm" loading="lazy">
+              <img src="img/whatsapp-testimonial-03.webp" alt="WhatsApp Erfahrung Laura B. (Wien)" class="w-full h-auto rounded-xl block mx-auto shadow-sm" loading="lazy" decoding="async">
             </div>
 
           </div>
@@ -915,7 +899,7 @@
             „Ich hatte ständig Wutausbrüche wegen Kleinigkeiten. Der Projektions-Spiegel nach C.G. Jung hat mir die Augen geöffnet. Dieses Buch ersetzt kein ganzes Medizinstudium, aber es hat mir in 14 Tagen mehr Klarheit über meine Muster gegeben als Monate des Nachdenkens.“
           </p>
           <div class="flex items-center gap-3 pt-3 border-t border-line">
-            <img src="img/avatar-05.jpg" alt="Sabine W." class="w-10 h-10 rounded-full object-cover">
+            <img src="img/avatar-05.jpg" alt="Sabine W." class="w-10 h-10 rounded-full object-cover" decoding="async">
             <div>
               <div class="text-xs font-display font-bold text-brand">Sabine W., 44</div>
               <div class="text-[10px] text-muted-fg">Kauf vor 18 Tagen • Berlin</div>
@@ -936,7 +920,7 @@
             „Die klickbaren Register und Notizfelder funktionieren auf meinem iPad Pro perfekt. Ich schreibe jeden Abend 15 Minuten vor dem Schlafen. Die somatische Übung zur Vagusnerv-Regulation hilft mir sofort beim Einschlafen.“
           </p>
           <div class="flex items-center gap-3 pt-3 border-t border-line">
-            <img src="img/avatar-06.jpg" alt="Maximilian K." class="w-10 h-10 rounded-full object-cover">
+            <img src="img/avatar-06.jpg" alt="Maximilian K." class="w-10 h-10 rounded-full object-cover" decoding="async">
             <div>
               <div class="text-xs font-display font-bold text-brand">Maximilian K., 31</div>
               <div class="text-[10px] text-muted-fg">Kauf vor 12 Tagen • Frankfurt</div>
@@ -957,7 +941,7 @@
             „Als Lehrerin habe ich mich für jeden aufgeopfert. Modul 5 mit den konkreten Formulierungshilfen hat mir geholfen, im Kollegium und in der Familie ruhig ‚Nein‘ zu sagen, ohne tagelang Schuldgefühle zu haben.“
           </p>
           <div class="flex items-center gap-3 pt-3 border-t border-line">
-            <img src="img/avatar-07.jpg" alt="Elena R." class="w-10 h-10 rounded-full object-cover">
+            <img src="img/avatar-07.jpg" alt="Elena R." class="w-10 h-10 rounded-full object-cover" decoding="async">
             <div>
               <div class="text-xs font-display font-bold text-brand">Elena R., 36</div>
               <div class="text-[10px] text-muted-fg">Kauf vor 24 Tagen • Stuttgart</div>
@@ -978,7 +962,7 @@
             „Ich war anfangs skeptisch, weil im Internet viel oberflächlicher Kram kursiert. Aber das hier ist tief fundiert. Die Verbindung aus C.G. Jungs Archetypen und moderner Körperarbeit ist genial. Absolute Empfehlung.“
           </p>
           <div class="flex items-center gap-3 pt-3 border-t border-line">
-            <img src="img/avatar-08.jpg" alt="Christoph H." class="w-10 h-10 rounded-full object-cover">
+            <img src="img/avatar-08.jpg" alt="Christoph H." class="w-10 h-10 rounded-full object-cover" decoding="async">
             <div>
               <div class="text-xs font-display font-bold text-brand">Christoph H., 49</div>
               <div class="text-[10px] text-muted-fg">Kauf vor 9 Tagen • Basel (Schweiz)</div>
@@ -1019,8 +1003,7 @@
                   class="w-full h-auto object-cover block"
                   width="1024"
                   height="1024"
-                  loading="lazy"
-                >
+                  loading="lazy" decoding="async">
               <!-- Technische Spezifikationen (Gründlichkeit & System nach DACH-Standard) -->
               <div class="mt-4 bg-sand/60 border border-line rounded-xl p-4 text-xs space-y-2">
                 <div class="font-display font-extrabold text-[11px] uppercase tracking-wider text-brand flex items-center gap-1.5">
@@ -1136,7 +1119,7 @@
         <div class="bg-white p-5 rounded-2xl border border-line shadow-soft flex flex-col justify-between">
           <div>
             <div class="h-36 rounded-xl overflow-hidden bg-sand mb-3 p-2 flex items-center justify-center">
-              <img src="img/mockup-bump-01.webp" alt="Somatisches Notfall-Kit Mockup" class="max-h-full object-contain" loading="lazy">
+              <img src="img/mockup-bump-01.webp" alt="Somatisches Notfall-Kit Mockup" class="max-h-full object-contain" loading="lazy" decoding="async">
             </div>
             <div class="flex items-center justify-between mb-1.5">
               <span class="text-[10px] font-bold text-brand uppercase bg-sand px-2 py-0.5 rounded">Zubuchbar</span>
@@ -1153,7 +1136,7 @@
         <div class="bg-white p-5 rounded-2xl border border-line shadow-soft flex flex-col justify-between">
           <div>
             <div class="h-36 rounded-xl overflow-hidden bg-sand mb-3 p-2 flex items-center justify-center">
-              <img src="img/mockup-bump-02.webp" alt="100 Impulskarten Mockup" class="max-h-full object-contain" loading="lazy">
+              <img src="img/mockup-bump-02.webp" alt="100 Impulskarten Mockup" class="max-h-full object-contain" loading="lazy" decoding="async">
             </div>
             <div class="flex items-center justify-between mb-1.5">
               <span class="text-[10px] font-bold text-brand uppercase bg-sand px-2 py-0.5 rounded">Zubuchbar</span>
@@ -1170,7 +1153,7 @@
         <div class="bg-white p-5 rounded-2xl border border-line shadow-soft flex flex-col justify-between">
           <div>
             <div class="h-36 rounded-xl overflow-hidden bg-sand mb-3 p-2 flex items-center justify-center">
-              <img src="img/mockup-bump-03.webp" alt="Brief an Inneres Kind Mockup" class="max-h-full object-contain" loading="lazy">
+              <img src="img/mockup-bump-03.webp" alt="Brief an Inneres Kind Mockup" class="max-h-full object-contain" loading="lazy" decoding="async">
             </div>
             <div class="flex items-center justify-between mb-1.5">
               <span class="text-[10px] font-bold text-brand uppercase bg-sand px-2 py-0.5 rounded">Zubuchbar</span>
@@ -1187,7 +1170,7 @@
         <div class="bg-white p-5 rounded-2xl border border-line shadow-soft flex flex-col justify-between">
           <div>
             <div class="h-36 rounded-xl overflow-hidden bg-sand mb-3 p-2 flex items-center justify-center">
-              <img src="img/mockup-bump-04.webp" alt="5 Audio-Meditationen Mockup" class="max-h-full object-contain" loading="lazy">
+              <img src="img/mockup-bump-04.webp" alt="5 Audio-Meditationen Mockup" class="max-h-full object-contain" loading="lazy" decoding="async">
             </div>
             <div class="flex items-center justify-between mb-1.5">
               <span class="text-[10px] font-bold text-brand uppercase bg-sand px-2 py-0.5 rounded">Zubuchbar</span>
@@ -1204,7 +1187,7 @@
         <div class="bg-white p-5 rounded-2xl border-2 border-cta shadow-card flex flex-col justify-between sm:col-span-2 lg:col-span-2">
           <div>
             <div class="h-36 rounded-xl overflow-hidden bg-sand mb-3 p-2 flex items-center justify-center">
-              <img src="img/mockup-bump-05.webp" alt="Komplett Combo Mockup" class="max-h-full object-contain" loading="lazy">
+              <img src="img/mockup-bump-05.webp" alt="Komplett Combo Mockup" class="max-h-full object-contain" loading="lazy" decoding="async">
             </div>
             <div class="flex items-center justify-between mb-1.5">
               <span class="text-[10px] font-bold text-white bg-cta px-2.5 py-0.5 rounded-full uppercase">★ Beliebteste Wahl</span>
@@ -1228,7 +1211,7 @@
         
         <!-- Sello Fotorrealista 3D de Codex -->
         <div class="w-36 sm:w-44 mx-auto mb-6">
-          <img src="img/sello-garantia-7tage-3d.webp" alt="7 Tage Geld-zurück-Garantie 3D Siegel" class="w-full h-auto drop-shadow-card mx-auto" loading="lazy">
+          <img src="img/sello-garantia-7tage-3d.webp" alt="7 Tage Geld-zurück-Garantie 3D Siegel" class="w-full h-auto drop-shadow-card mx-auto" loading="lazy" decoding="async">
         </div>
 
         <h2 class="text-2xl sm:text-3xl font-display font-extrabold uppercase text-brand mb-3">
@@ -1644,26 +1627,105 @@
       setInterval(cycleToast, 9000);
     }, 3000);
 
-    // 3. UTM Passthrough Engine (Hotmart checkout links)
-    (function forwardUTMs() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src', 'xcod'];
-      const hasUTMs = utmKeys.some(k => urlParams.has(k));
-      if (!hasUTMs) return;
+    // 3. Ultimate UTM & Tracking Engine 100% (Hotmart Attribution & Meta Ads)
+    (function initHotmartTrackingEngine() {
+      const STORAGE_KEY = 'schattenarbeit_utms_v1';
+      const TRACKED_KEYS = [
+        'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+        'xcod', 'src', 'sck', 'fbclid', 'gclid', 'ttclid'
+      ];
 
-      document.querySelectorAll('a[data-utmify-checkout="true"], a[href*="hotmart.com"]').forEach(link => {
+      // 1. Extraer y persistir parámetros de la URL actual
+      function captureAndStoreParams() {
+        const currentParams = new URLSearchParams(window.location.search);
+        let storedData = {};
+
         try {
-          const destUrl = new URL(link.href);
-          utmKeys.forEach(k => {
-            if (urlParams.has(k) && !destUrl.searchParams.has(k)) {
-              destUrl.searchParams.set(k, urlParams.get(k));
-            }
-          });
-          link.href = destUrl.toString();
-        } catch (e) {
-          console.warn('Error forwarding UTMs to:', link.href);
+          const raw = sessionStorage.getItem(STORAGE_KEY) || localStorage.getItem(STORAGE_KEY);
+          if (raw) storedData = JSON.parse(raw);
+        } catch (e) {}
+
+        let hasNewParams = false;
+        TRACKED_KEYS.forEach(key => {
+          if (currentParams.has(key)) {
+            storedData[key] = currentParams.get(key);
+            hasNewParams = true;
+          }
+        });
+
+        // Síntesis inteligente de parámetros nativos de Hotmart si faltan
+        if (storedData['utm_source'] && !storedData['src']) {
+          storedData['src'] = storedData['utm_source'];
         }
-      });
+        if (storedData['utm_campaign'] && !storedData['sck']) {
+          storedData['sck'] = [storedData['utm_campaign'], storedData['utm_content']].filter(Boolean).join('|');
+        }
+        if (!storedData['xcod'] && storedData['utm_source']) {
+          storedData['xcod'] = [storedData['utm_source'], storedData['utm_campaign'], storedData['utm_content']].filter(Boolean).join('_');
+        }
+
+        try {
+          const serialized = JSON.stringify(storedData);
+          sessionStorage.setItem(STORAGE_KEY, serialized);
+          localStorage.setItem(STORAGE_KEY, serialized);
+        } catch (e) {}
+
+        return storedData;
+      }
+
+      const activeParams = captureAndStoreParams();
+
+      // 2. Aplicar parámetros a todas las URLs de Hotmart en el DOM
+      function applyParamsToLinks() {
+        if (!activeParams || Object.keys(activeParams).length === 0) return;
+
+        document.querySelectorAll('a[href*="hotmart.com"], a[data-utmify-checkout="true"]').forEach(link => {
+          try {
+            const u = new URL(link.href, window.location.origin);
+            Object.keys(activeParams).forEach(k => {
+              if (activeParams[k]) {
+                u.searchParams.set(k, activeParams[k]);
+              }
+            });
+            link.href = u.toString();
+          } catch (err) {}
+        });
+      }
+
+      // Ejecutar inmediatamente
+      applyParamsToLinks();
+      document.addEventListener('DOMContentLoaded', applyParamsToLinks);
+      window.addEventListener('load', applyParamsToLinks);
+
+      // 3. Interceptor global a prueba de balas en el momento exacto del clic
+      document.addEventListener('click', function(event) {
+        const anchor = event.target.closest('a');
+        if (anchor && anchor.href && anchor.href.includes('hotmart.com')) {
+          try {
+            const u = new URL(anchor.href, window.location.origin);
+            Object.keys(activeParams).forEach(k => {
+              if (activeParams[k]) {
+                u.searchParams.set(k, activeParams[k]);
+              }
+            });
+            anchor.href = u.toString();
+          } catch (e) {}
+        }
+      }, true);
+
+      // 4. Prewarm Hotmart Connection en Hover/Touch (Connect Rate Speed Booster)
+      let prewarmed = false;
+      function prewarmHotmart() {
+        if (prewarmed) return;
+        prewarmed = true;
+        const link = document.createElement('link');
+        link.rel = 'preconnect';
+        link.href = 'https://pay.hotmart.com';
+        link.crossOrigin = 'anonymous';
+        document.head.appendChild(link);
+      }
+      document.addEventListener('touchstart', prewarmHotmart, { passive: true, once: true });
+      document.addEventListener('mouseover', prewarmHotmart, { passive: true, once: true });
     })();
   </script>
 
